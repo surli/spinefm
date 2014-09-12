@@ -1,0 +1,18 @@
+<assembly>
+  <id/>
+  <formats>
+    <format>war</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>${output-directory}</directory>
+      <outputDirectory>/WEB-INF</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>${project.build.directory}/dependency</directory>
+      <outputDirectory>/WEB-INF/lib</outputDirectory>
+    </fileSet>
+  </fileSets>
+  
+</assembly>

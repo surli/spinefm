@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: spinefm-generation-tool
+Bundle-SymbolicName: spinefm-generation-tool
+Bundle-Version: 1.1.0.qualifier
+Export-Package: fr.unice.spinefm.generation.tool
+Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.8.3",
+ org.scala-ide.scala.library;bundle-version="2.10.1",
+ fr.unice.i3s.sigma;bundle-version="1.0.0",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.8.1",
+ org.apache.commons.log4j-core;bundle-version="2.0.0",
+ org.eclipse.emf.codegen.ecore;bundle-version="2.8.2"

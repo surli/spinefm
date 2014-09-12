@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: restfuncDSL.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: restfuncDSL.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: restfuncDSL;visibility:=reexport,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.builder,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare,
+ org.eclipse.ui.ide.source,
+ org.eclipse.ui.editors.source,
+ org.eclipse.ui.source,
+ org.eclipse.ui.editors,
+ org.eclipse.ui
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: fr.unice.spinefm.ui.quickfix,
+ fr.unice.spinefm.ui.contentassist,
+ fr.unice.spinefm.ui.contentassist.antlr,
+ fr.unice.spinefm.ui.internal
+Bundle-Activator: fr.unice.spinefm.ui.internal.RestfuncDSLActivator

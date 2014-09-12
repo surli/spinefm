@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmm:FeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fmm="fmm.spinefm.unice.fr" id="fm_layout" name="layout">
+  <root id="fm_layout.Layout" name="Layout">
+    <children>
+      <features id="fm_layout.Zones" name="Zones">
+        <children>
+          <features id="fm_layout.BigSquareCenter" name="BigSquareCenter"/>
+        </children>
+        <children state="opt">
+          <features id="fm_layout.ThinBarFooter" name="ThinBarFooter"/>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_layout.Property" name="Property">
+        <children>
+          <features id="fm_layout.Target" name="Target">
+            <children state="xor">
+              <features id="fm_layout.Students" name="Students"/>
+              <features id="fm_layout.Children" name="Children"/>
+              <features id="fm_layout.AnyPeople" name="AnyPeople"/>
+            </children>
+          </features>
+        </children>
+        <children>
+          <features id="fm_layout.Usage" name="Usage">
+            <children state="xor">
+              <features id="fm_layout.Academic" name="Academic"/>
+              <features id="fm_layout.Disabilities" name="Disabilities">
+                <children state="opt">
+                  <features id="fm_layout.VisualDisability" name="VisualDisability"/>
+                </children>
+              </features>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_layout.Product" name="Product">
+        <children state="xor">
+          <features id="fm_layout.LayoutIRSAM" name="LayoutIRSAM"/>
+          <features id="fm_layout.LayoutEPU" name="LayoutEPU"/>
+          <features id="fm_layout.LayoutCA" name="LayoutCA"/>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_layout.Design" name="Design">
+        <children state="xor">
+          <features id="fm_layout.EPU" name="EPU"/>
+          <features id="fm_layout.Noel" name="Noel"/>
+          <features id="fm_layout.N2I" name="N2I"/>
+          <features id="fm_layout.CA" name="CA"/>
+          <features id="fm_layout.IRSAM" name="IRSAM"/>
+        </children>
+      </features>
+    </children>
+  </root>
+  <constraints Rule="(CA &lt;-> Children)"/>
+  <constraints Rule="(AnyPeople &lt;-> LayoutIRSAM)"/>
+  <constraints Rule="(Academic &lt;-> Students)"/>
+  <constraints Rule="(VisualDisability -> !ThinBarFooter)"/>
+  <constraints Rule="(VisualDisability &lt;-> CA)"/>
+  <constraints Rule="(IRSAM &lt;-> AnyPeople)"/>
+  <constraints Rule="(LayoutCA &lt;-> VisualDisability)"/>
+  <constraints Rule="(IRSAM -> !ThinBarFooter)"/>
+</fmm:FeatureModel>

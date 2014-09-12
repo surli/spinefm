@@ -1,0 +1,7 @@
+source=Layout
+target=Zone
+rule :
+	SELECTED Zones.$A => SELECT Product.$A ;
+
+rule :
+	DESELECTED Zones.$A => DESELECT Product.$A ;

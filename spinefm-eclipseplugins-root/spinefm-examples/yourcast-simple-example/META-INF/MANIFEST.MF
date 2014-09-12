@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: yourcast-simple-example
+Bundle-SymbolicName: yourcast-simple-example
+Bundle-Version: 1.0.0.qualifier
+Export-Package: fr.unice.spinefm.example.yourcast.simple

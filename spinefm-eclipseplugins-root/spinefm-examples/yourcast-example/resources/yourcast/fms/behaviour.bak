@@ -1,0 +1,20 @@
+fm_behaviour = FM(Behaviour: Animation Numbers Product Elements ; 
+Animation: (Repeat|Pause)? (Scrolling|Appear) ; 
+Numbers: (FixedNumber|Unique|All) ; 
+Product: (AppearanceBehaviour|ScrollingBehaviour) ; 
+Elements: [Title] [Logo] [Graphic] Text ; 
+Scrolling: Direction [Loop] ; 
+Repeat: [Contrast] ; 
+AppearanceBehaviour: (SimpleRepeatBehaviour|BasicBehaviour) ; 
+ScrollingBehaviour: (HorizontalScrollingSetBehaviour|HorizontalScrollingBehaviour) ; 
+Graphic: [Thumbnails] ; 
+Direction: (Right|Left) ; 
+(HorizontalScrollingSetBehaviour <-> Pause);
+(Unique <-> Logo);
+(Appear <-> Title);
+(ScrollingBehaviour <-> Scrolling);
+(Logo <-> Appear);
+(FixedNumber <-> HorizontalScrollingSetBehaviour);
+(SimpleRepeatBehaviour <-> Repeat);
+(All <-> Thumbnails);
+(FixedNumber -> !Loop);)

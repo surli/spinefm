@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmm:FeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fmm="fmm.spinefm.unice.fr" id="fm_behaviour" name="behaviour">
+  <root id="fm_behaviour.Behaviour" name="Behaviour">
+    <children>
+      <features id="fm_behaviour.Elements" name="Elements">
+        <children state="opt">
+          <features id="fm_behaviour.Logo" name="Logo"/>
+        </children>
+        <children state="opt">
+          <features id="fm_behaviour.Title" name="Title"/>
+        </children>
+        <children state="opt">
+          <features id="fm_behaviour.Graphic" name="Graphic">
+            <children state="opt">
+              <features id="fm_behaviour.Thumbnails" name="Thumbnails"/>
+            </children>
+          </features>
+        </children>
+        <children>
+          <features id="fm_behaviour.Text" name="Text"/>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_behaviour.Numbers" name="Numbers">
+        <children state="xor">
+          <features id="fm_behaviour.FixedNumber" name="FixedNumber"/>
+          <features id="fm_behaviour.Unique" name="Unique"/>
+          <features id="fm_behaviour.All" name="All"/>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_behaviour.Product" name="Product">
+        <children state="xor">
+          <features id="fm_behaviour.AppearanceBehaviour" name="AppearanceBehaviour">
+            <children state="xor">
+              <features id="fm_behaviour.SimpleRepeatBehaviour" name="SimpleRepeatBehaviour"/>
+              <features id="fm_behaviour.BasicBehaviour" name="BasicBehaviour"/>
+            </children>
+          </features>
+          <features id="fm_behaviour.ScrollingBehaviour" name="ScrollingBehaviour">
+            <children state="xor">
+              <features id="fm_behaviour.HorizontalScrollingSetBehaviour" name="HorizontalScrollingSetBehaviour"/>
+              <features id="fm_behaviour.HorizontalScrollingBehaviour" name="HorizontalScrollingBehaviour"/>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_behaviour.Animation" name="Animation">
+        <children state="mutex">
+          <features id="fm_behaviour.Repeat" name="Repeat">
+            <children state="opt">
+              <features id="fm_behaviour.Contrast" name="Contrast"/>
+            </children>
+          </features>
+          <features id="fm_behaviour.Pause" name="Pause"/>
+        </children>
+        <children state="xor">
+          <features id="fm_behaviour.Scrolling" name="Scrolling">
+            <children>
+              <features id="fm_behaviour.Direction" name="Direction">
+                <children state="xor">
+                  <features id="fm_behaviour.Right" name="Right"/>
+                  <features id="fm_behaviour.Left" name="Left"/>
+                </children>
+              </features>
+            </children>
+            <children state="opt">
+              <features id="fm_behaviour.Loop" name="Loop"/>
+            </children>
+          </features>
+          <features id="fm_behaviour.Appear" name="Appear"/>
+        </children>
+      </features>
+    </children>
+  </root>
+  <constraints Rule="(HorizontalScrollingSetBehaviour &lt;-> Pause)"/>
+  <constraints Rule="(Unique &lt;-> Logo)"/>
+  <constraints Rule="(Appear &lt;-> Title)"/>
+  <constraints Rule="(ScrollingBehaviour &lt;-> Scrolling)"/>
+  <constraints Rule="(Logo &lt;-> Appear)"/>
+  <constraints Rule="(FixedNumber &lt;-> HorizontalScrollingSetBehaviour)"/>
+  <constraints Rule="(SimpleRepeatBehaviour &lt;-> Repeat)"/>
+  <constraints Rule="(FixedNumber -> !Loop)"/>
+</fmm:FeatureModel>

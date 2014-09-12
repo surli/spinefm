@@ -1,0 +1,5 @@
+rule :
+	SELECTED Spatial.$X => SELECT Numbers.$X ;
+	
+rule :
+	DESELECTED Spatial.$A => DESELECT Numbers.$A ;

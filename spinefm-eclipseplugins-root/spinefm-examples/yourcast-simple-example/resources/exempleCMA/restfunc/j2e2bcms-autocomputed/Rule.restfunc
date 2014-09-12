@@ -1,0 +1,47 @@
+rule : 
+	SELECTED DistributedTransactions => SELECT Multiple; 
+	
+rule : 
+	SELECTED SessionReplication => SELECT Multiple ; 
+	
+rule : 
+	SELECTED DataSecurity => SELECT Encrypted ; 
+	
+rule : 
+	SELECTED HighAvailability => SELECT Availability ; 
+	
+rule : 
+	SELECTED PerformanceCritical => SELECT Performance ; 
+	
+rule : 
+	SELECTED XML => SELECT SOAP ; 
+	
+rule : 
+	SELECTED XML => SELECT nfSOAP ; 
+	
+rule :
+	SELECTED OpenSystem => SELECT Coordinateidentification ;
+	
+rule : 
+	DESELECTED DistributedTransactions => DESELECT Multiple; 
+	
+rule : 
+	DESELECTED SessionReplication => DESELECT Multiple ; 
+	
+rule : 
+	DESELECTED DataSecurity => DESELECT Encrypted ; 
+	
+rule : 
+	DESELECTED HighAvailability => DESELECT Availability ; 
+	
+rule : 
+	DESELECTED PerformanceCritical => DESELECT Performance ; 
+	
+rule : 
+	DESELECTED XML => DESELECT SOAP ; 
+	
+rule : 
+	DESELECTED XML => DESELECT nfSOAP ; 
+	
+rule :
+	DESELECTED OpenSystem => DESELECT Coordinateidentification ;

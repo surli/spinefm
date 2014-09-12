@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmm:FeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fmm="fmm.spinefm.unice.fr" id="fm_source" name="source">
+  <root id="fm_source.Source" name="Source">
+    <children>
+      <features id="fm_source.Criteria" name="Criteria">
+        <children state="opt">
+          <features id="fm_source.Sort" name="Sort">
+            <children state="mutex">
+              <features id="fm_source.Popularity" name="Popularity"/>
+              <features id="fm_source.Views" name="Views"/>
+            </children>
+            <children state="opt">
+              <features id="fm_source.Name" name="Name"/>
+            </children>
+          </features>
+        </children>
+        <children state="opt">
+          <features id="fm_source.Filter" name="Filter">
+            <children state="or">
+              <features id="fm_source.TimeLine" name="TimeLine"/>
+              <features id="fm_source.Date" name="Date"/>
+              <features id="fm_source.Album" name="Album"/>
+              <features id="fm_source.Target" name="Target"/>
+              <features id="fm_source.Tag" name="Tag"/>
+            </children>
+            <children state="opt">
+              <features id="fm_source.City" name="City"/>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_source.TypeInfo" name="TypeInfo">
+        <children state="xor">
+          <features id="fm_source.Tweet" name="Tweet"/>
+          <features id="fm_source.Calendar" name="Calendar">
+            <children>
+              <features id="fm_source.ICalReader" name="ICalReader"/>
+            </children>
+          </features>
+          <features id="fm_source.PictureAlbum" name="PictureAlbum">
+            <children state="xor">
+              <features id="fm_source.FlickR" name="FlickR"/>
+              <features id="fm_source.Picasa" name="Picasa"/>
+            </children>
+          </features>
+          <features id="fm_source.Forecast" name="Forecast">
+            <children>
+              <features id="fm_source.Weather2" name="Weather2"/>
+            </children>
+          </features>
+          <features id="fm_source.Ephemeride" name="Ephemeride">
+            <children>
+              <features id="fm_source.SaintDuJour" name="SaintDuJour"/>
+            </children>
+          </features>
+          <features id="fm_source.Announces" name="Announces">
+            <children>
+              <features id="fm_source.Announcement" name="Announcement"/>
+            </children>
+          </features>
+          <features id="fm_source.Menu" name="Menu">
+            <children>
+              <features id="fm_source.MenuInfo" name="MenuInfo"/>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+  </root>
+  <constraints Rule="(Tag -> !ICalReader)"/>
+  <constraints Rule="(Tag -> !MenuInfo)"/>
+  <constraints Rule="(Tag -> !Announces)"/>
+  <constraints Rule="(Target -> !Picasa)"/>
+  <constraints Rule="(Ephemeride -> !Target)"/>
+  <constraints Rule="(Sort -> Filter)"/>
+  <constraints Rule="(TimeLine -> !Target)"/>
+  <constraints Rule="(TimeLine -> Tweet)"/>
+  <constraints Rule="(Target -> !Tweet)"/>
+  <constraints Rule="(Tag -> !Album)"/>
+  <constraints Rule="(Views -> PictureAlbum)"/>
+  <constraints Rule="(Name -> PictureAlbum)"/>
+  <constraints Rule="(Target -> !Calendar)"/>
+  <constraints Rule="(Popularity -> Tweet)"/>
+  <constraints Rule="(Target -> !PictureAlbum)"/>
+  <constraints Rule="(Date -> !Popularity)"/>
+  <constraints Rule="(Album -> PictureAlbum)"/>
+  <constraints Rule="(Target -> !Name)"/>
+  <constraints Rule="(Weather2 -> !Target)"/>
+  <constraints Rule="(TimeLine -> !Tag)"/>
+  <constraints Rule="(Weather2 -> !Tag)"/>
+  <constraints Rule="(Weather2 &lt;-> City)"/>
+  <constraints Rule="(Menu -> !Target)"/>
+  <constraints Rule="(Target -> !Tag)"/>
+  <constraints Rule="(Ephemeride -> !Tag)"/>
+</fmm:FeatureModel>

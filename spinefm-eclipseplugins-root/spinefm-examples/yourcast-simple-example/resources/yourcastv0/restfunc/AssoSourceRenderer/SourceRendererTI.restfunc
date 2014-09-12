@@ -1,0 +1,5 @@
+rule RS_TypeInfo_Sel :
+	SELECTED TypeInfo.$X => SELECT TypeInfo.$X ;
+	
+rule RS_TypeInfo_Desel :
+	DESELECTED TypeInfo.$A => DESELECT TypeInfo.$A ;

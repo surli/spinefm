@@ -1,0 +1,3 @@
+rule ByDay_imply_Date :
+	SELECTED ByDay => SELECT Date ;
+	

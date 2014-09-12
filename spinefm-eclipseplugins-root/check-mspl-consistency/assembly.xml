@@ -1,0 +1,14 @@
+<assembly>
+  <id/>
+  <formats>
+    <format>jar</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>${project.build.directory}/dependency</directory>
+      <outputDirectory>/classes</outputDirectory>
+    </fileSet>
+  </fileSets>
+  
+</assembly>

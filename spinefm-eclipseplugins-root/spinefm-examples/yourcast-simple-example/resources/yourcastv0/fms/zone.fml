@@ -1,0 +1,6 @@
+fm_zone = FM(Zone: Product Elements;
+			Product: (BigSquareCenter|ThinBarFooter);
+			Elements: Content [Title] [Logo];
+			Content: Text [Graphic];
+			Graphic: Thumbnails [Full];
+			)

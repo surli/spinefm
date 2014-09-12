@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/restfuncDSL/src-gen" editDirectory="/restfuncDSL.edit/src"
+    editorDirectory="/restfuncDSL.editor/src" modelPluginID="restfuncDSL" forceOverwrite="true"
+    modelName="RestfuncDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="restfuncDSL.edit"
+    editorPluginID="restfuncDSL.editor" runtimeVersion="2.9">
+  <genPackages prefix="RestfuncDSL" basePackage="fr.unice.spinefm" disposableProviderFactory="true"
+      ecorePackage="RestfuncDSL.ecore#/">
+    <genClasses ecoreClass="RestfuncDSL.ecore#//RestFunc">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//RestFunc/init"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//RestFunc/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//RuleString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RestfuncDSL.ecore#//RuleString/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//RuleString/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//RuleString/right"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//SourceAndTarget">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//SourceAndTarget/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//SourceAndTarget/target"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//Source">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RestfuncDSL.ecore#//Source/deSrc"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//Target">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RestfuncDSL.ecore#//Target/deTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//LeftPart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//LeftPart/features"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//GroupFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RestfuncDSL.ecore#//GroupFeature/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//GroupFeature/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//FeatureNamed">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RestfuncDSL.ecore#//FeatureNamed/featureName"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//SingleFeature"/>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//VariableFeature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//VariableFeature/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RestfuncDSL.ecore#//Variable/id"/>
+    </genClasses>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//StarFeature"/>
+    <genClasses ecoreClass="RestfuncDSL.ecore#//RightPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RestfuncDSL.ecore#//RightPart/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RestfuncDSL.ecore#//RightPart/feature"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

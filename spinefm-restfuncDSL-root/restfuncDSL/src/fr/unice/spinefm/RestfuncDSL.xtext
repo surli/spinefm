@@ -1,0 +1,31 @@
+grammar fr.unice.spinefm.RestfuncDSL with org.eclipse.xtext.common.Terminals
+
+generate restfuncDSL "http://www.unice.fr/spinefm/RestfuncDSL"
+
+RestFunc: init=SourceAndTarget (rules+=RuleString)+;
+RuleString: BEGIN_RULE (id=ID)? POINTS left=LeftPart IMPLY right=RightPart END_RULE;
+
+SourceAndTarget: source=Source target=Target;
+Source: SOURCEKEY EQUAL deSrc=ID;
+Target: TARGETKEY EQUAL deTarget=ID;
+LeftPart: (features+=GroupFeature)+;
+GroupFeature: state=FM_STATE feature+=FeatureNamed (COMMA feature+=FeatureNamed)*;
+FeatureNamed: SingleFeature | VariableFeature | StarFeature;
+SingleFeature: featureName=ID;
+VariableFeature: featureName=ID DOT variable=Variable;
+Variable: VARBEGIN id=ID;
+StarFeature: featureName=ID DOT STAR;
+RightPart: action=ACTION feature=FeatureNamed;
+FM_STATE: 'SELECTED' | 'DESELECTED';
+ACTION: 'SELECT' | 'DESELECT';
+terminal IMPLY: '=>';
+terminal BEGIN_RULE: 'rule';
+terminal STAR: '*';
+terminal POINTS: ':';
+terminal END_RULE: ';';
+terminal COMMA: ',';
+terminal DOT: '.';
+terminal VARBEGIN: '$';
+terminal SOURCEKEY: 'source';
+terminal TARGETKEY: 'target';
+terminal EQUAL: '=';

@@ -1,0 +1,8 @@
+zone1 = FM(Zone: Product Elements Orientation Design; Product: RightZone_glc; Elements: Logo Title Content Bloc; Content: Graphic Text; Graphic: Thumbnails; Orientation: Portrait; Design: GLC;)
+zone2 = FM(Zone: Product Elements Orientation Design; Product: MainZone_glc; Elements: Logo Title Content; Content: Graphic Text; Graphic: Full Thumbnails; Orientation: Landscape; Design: GLC;)
+zone3 = FM(Zone: Product Elements Orientation Design; Product: BottomZone_glc; Elements: Logo Content; Content: Graphic Text; Graphic: Thumbnails; Orientation: Landscape; Design: GLC;)
+zone4 = FM(Zone: Product Elements Orientation Design; Product: HeaderZone_glc; Elements: Content; Content: Graphic; Graphic: Thumbnails; Orientation: Landscape; Design: GLC;)
+zone5 = FM(Zone: Product Elements Orientation Design; Product: MainZone_irsam; Elements: Logo Title Content; Content: Graphic Text; Graphic: Full ; Orientation: Landscape; Design: IRSAM;)
+zone6 = FM(Zone: Product Elements Orientation Design; Product: VocalZone; Elements: Content; Content: Text; Text: Speakable; Orientation: Landscape; Design: IRSAM CA;)
+
+yourcastv0_zone = merge sunion zone*

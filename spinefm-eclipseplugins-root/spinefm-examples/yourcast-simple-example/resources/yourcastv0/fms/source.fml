@@ -1,0 +1,11 @@
+fm_source = FM(Source: TypeInfo [Criteria];
+				TypeInfo: (Calendar|Tweet|PictureAlbum|Weather|Announcement);
+				Calendar: (ICalReader|HyperCal);
+				PictureAlbum: (Picasa|FlickR);
+				Tweet: Twitter;
+				Weather: Weather2;
+				Announcement: AnnouncementService;
+				Criteria: [Filter] [Sort];
+				Filter: (Timeline|Album|Period);
+				Sort: (Popularity|Date|Name)+;
+				)

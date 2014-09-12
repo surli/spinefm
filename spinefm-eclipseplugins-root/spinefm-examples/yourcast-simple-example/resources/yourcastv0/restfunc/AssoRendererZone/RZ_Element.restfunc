@@ -1,0 +1,5 @@
+rule :
+	SELECTED Elements.$A => SELECT Elements.$A ;
+	
+rule :
+	DESELECTED Elements.$A => DESELECT Elements.$A ;

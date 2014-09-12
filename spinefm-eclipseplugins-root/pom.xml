@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>fr.unice.spinefm</groupId>
+		<artifactId>spinefm-root</artifactId>
+		<version>1.1.0</version>
+	</parent>
+	<artifactId>spinefm-eclipseplugins-root</artifactId>
+	<packaging>pom</packaging>
+	<name>Eclipse Plugins Modules for SpineFM</name>
+	<modules>
+		<module>spinefm-core</module>
+		<!-- <module>spinefm-examples</module> -->
+		<module>spinefm-rest-service</module>
+    	<!--  <module>spinefm-generation-tool</module> -->
+      <!-- <module>check-mspl-consistency</module> -->
+  </modules>
+	<properties>
+		<tycho-version>0.19.0</tycho-version>
+		<tycho-extras-version>0.19.0</tycho-extras-version>
+		<sonar.forceAnalysis>true</sonar.forceAnalysis>    
+        <sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>    
+        
+		<!-- repositories -->
+		<p2.google-guava>http://guava-osgi.googlecode.com/svn/trunk/repository/</p2.google-guava>
+		<p2.eclipse-juno>http://download.eclipse.org/releases/juno</p2.eclipse-juno>
+		<p2.nyx>http://nyx.unice.fr/p2/sigma/milestones/1.1/</p2.nyx>
+		<!-- <p2.eclipse-indigo>http://download.eclipse.org/releases/indigo/</p2.eclipse-indigo> -->
+
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>spinefm-external</id>
+			<name>SpineFM External p2 repository</name>
+			<layout>p2</layout>
+      <url>file://${basedir}/../../spinefm-p2/target/repository/</url>
+		</repository>
+		<repository>
+			<id>eclipse-juno</id>
+			<name>Eclipse juno repository</name>
+			<layout>p2</layout>
+			<url>${p2.eclipse-juno}</url>
+		</repository>
+		<repository>
+			<id>p2-nyx</id>
+			<name>Sigma Repository</name>
+			<layout>p2</layout>
+			<url>${p2.nyx}</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-source-feature-plugin</artifactId>
+					<version>${tycho-extras-version}</version>
+					<executions>
+						<execution>
+							<id>source-feature</id>
+							<phase>package</phase>
+							<goals>
+								<goal>source-feature</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<executions>
+						<execution>
+							<id>attached-p2-metadata</id>
+							<phase>package</phase>
+							<goals>
+								<goal>p2-metadata</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.14</version>
+					<configuration>
+						<testClassesDirectory>target/classes/</testClassesDirectory>
+					</configuration>
+					<executions>
+						<execution>
+							<id>run-test</id>
+							<phase>test</phase>
+							<goals>
+								<goal>test</goal>
+							</goals>
+						</execution>
+					</executions>
+					
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<excludeResources>
+						<excludeResource>**/*.scala</excludeResource>
+					</excludeResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<dependency-resolution>
+						<!-- <extraRequirements> <requirement> <type>p2-installable-unit</type> 
+							<id>org.eclipse.jdt.feature.group</id> <versionRange>3.7.3</versionRange> 
+							</requirement> </extraRequirements> -->
+					</dependency-resolution>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<version>1.1.1-SNAPSHOT</version>
+</project>

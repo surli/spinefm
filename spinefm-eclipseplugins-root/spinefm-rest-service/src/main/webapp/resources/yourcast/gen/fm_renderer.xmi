@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fmm:FeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fmm="fmm.spinefm.unice.fr" id="fm_renderer" name="renderer">
+  <root id="fm_renderer.Renderer" name="Renderer">
+    <children>
+      <features id="fm_renderer.TypeInfo" name="TypeInfo">
+        <children state="xor">
+          <features id="fm_renderer.Tweet" name="Tweet"/>
+          <features id="fm_renderer.Calendar" name="Calendar"/>
+          <features id="fm_renderer.PictureAlbum" name="PictureAlbum"/>
+          <features id="fm_renderer.Forecast" name="Forecast"/>
+          <features id="fm_renderer.Ephemeride" name="Ephemeride"/>
+          <features id="fm_renderer.Announces" name="Announces"/>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_renderer.Discretization" name="Discretization">
+        <children>
+          <features id="fm_renderer.Temporal" name="Temporal">
+            <children state="xor">
+              <features id="fm_renderer.FixedTime" name="FixedTime"/>
+              <features id="fm_renderer.FlexibleTime" name="FlexibleTime"/>
+            </children>
+          </features>
+        </children>
+        <children>
+          <features id="fm_renderer.Spatial" name="Spatial">
+            <children state="xor">
+              <features id="fm_renderer.FixedNumber" name="FixedNumber">
+                <children state="opt">
+                  <features id="fm_renderer.TenInformations" name="TenInformations"/>
+                </children>
+              </features>
+              <features id="fm_renderer.All" name="All"/>
+              <features id="fm_renderer.Unique" name="Unique"/>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_renderer.Elements" name="Elements">
+        <children state="opt">
+          <features id="fm_renderer.Logo" name="Logo"/>
+        </children>
+        <children>
+          <features id="fm_renderer.Content" name="Content">
+            <children state="or">
+              <features id="fm_renderer.Graphic" name="Graphic">
+                <children state="xor">
+                  <features id="fm_renderer.Thumbnails" name="Thumbnails"/>
+                  <features id="fm_renderer.FullPicture" name="FullPicture"/>
+                </children>
+              </features>
+              <features id="fm_renderer.Text" name="Text"/>
+            </children>
+          </features>
+        </children>
+        <children state="opt">
+          <features id="fm_renderer.Title" name="Title"/>
+        </children>
+      </features>
+    </children>
+    <children>
+      <features id="fm_renderer.Output" name="Output">
+        <children state="xor">
+          <features id="fm_renderer.Block" name="Block"/>
+          <features id="fm_renderer.Line" name="Line"/>
+        </children>
+      </features>
+    </children>
+    <children state="opt">
+      <features id="fm_renderer.Criteria" name="Criteria">
+        <children state="opt">
+          <features id="fm_renderer.Clustering" name="Clustering">
+            <children state="xor">
+              <features id="fm_renderer.ByHour" name="ByHour"/>
+              <features id="fm_renderer.ByMonth" name="ByMonth"/>
+              <features id="fm_renderer.ByDay" name="ByDay"/>
+              <features id="fm_renderer.BySize" name="BySize"/>
+            </children>
+          </features>
+        </children>
+      </features>
+    </children>
+  </root>
+</fmm:FeatureModel>

@@ -1,0 +1,5 @@
+layout1 = FM (Layout: Product Zones Design; Product: LayoutAcademicUNS; Zones: MainZone_glc BottomZone_glc RightZone_glc HeaderZone_glc; Design: GLC UNS;)
+layout2 = FM (Layout: Product Zones Design; Product: LayoutAcademic; Zones: MainZone_glc BottomZone_glc RightZone_glc HeaderZone_glc; Design: GLC;)
+layout3 = FM (Layout: Product Zones Design; Product: LayoutHandicap; Zones: MainZone_irsam VocalZone; Design: IRSAM;)
+				
+yourcastv0_layout = merge sunion layout*

@@ -1,0 +1,15 @@
+fm_layout = FM(Layout: Property Design Product Zones ; 
+				Property: Usage Target ; Design: (EPU|Noel|N2I|CA|IRSAM) ; 
+				Product: (LayoutIRSAM|LayoutEPU|LayoutCA) ; 
+				Zones: [ThinBarFooter] BigSquareCenter ; 
+				Usage: (Academic|Disabilities) ; 
+				Target: (Students|Children|AnyPeople) ; 
+				Disabilities: [VisualDisability] ; 
+				(CA <-> Children);
+				(AnyPeople <-> LayoutIRSAM);
+				(Academic <-> Students);
+				(VisualDisability -> !ThinBarFooter);
+				(VisualDisability <-> CA);
+				(IRSAM <-> AnyPeople);
+				(LayoutCA <-> VisualDisability);
+				(IRSAM -> !ThinBarFooter);)

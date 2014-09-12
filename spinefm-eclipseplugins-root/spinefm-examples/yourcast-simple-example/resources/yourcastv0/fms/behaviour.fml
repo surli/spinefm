@@ -1,0 +1,8 @@
+fm_behaviour = FM(Behaviour: Product Animation Numbers Elements;
+					Product: (ScrollingBehaviour|SimpleAppearanceBehaviour);
+					Animation: (Scrolling|Appear);
+					Numbers: (Fixed|One|All);
+					Elements: Content [Title] [Logo];
+					Content: Text [Graphic];
+					Graphic: Thumbnails [Full];
+					)

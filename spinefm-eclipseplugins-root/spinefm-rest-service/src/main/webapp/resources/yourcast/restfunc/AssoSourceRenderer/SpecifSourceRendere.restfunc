@@ -1,0 +1,3 @@
+rule notDate_imply_notByDay :
+	DESELECTED Date => DESELECT ByDay ;
+	

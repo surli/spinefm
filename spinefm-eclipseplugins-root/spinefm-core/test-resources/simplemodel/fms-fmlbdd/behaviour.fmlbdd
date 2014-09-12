@@ -1,0 +1,5 @@
+behaviour1 = FM(Behaviour: Animation Time Number Elements;  Animation: Appearance; Appearance: Smooth; Number: One; Time: Individual; Elements: Content;)	
+behaviour2 = FM(Behaviour: Animation Time Number Elements;  Animation: Appearance; Number: One; Time: Individual; Elements: Content;)
+behaviour3 = FM(Behaviour: Animation Time Number Elements;  Animation: Vocalization;  Number: One; Time: Individual; Elements: Content; Content: Text; Text: Speakable;)	
+
+yourcastv0_behaviour = merge sunion behaviour*
