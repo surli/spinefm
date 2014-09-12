@@ -2,4 +2,4 @@ language: java
 jdk:
   - oraclejdk7
 
-before_install: cd eclipse-p2 && mvn clean install
+before_install: cd spinefm-p2 && mvn clean install
