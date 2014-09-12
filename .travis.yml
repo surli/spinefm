@@ -1,0 +1,5 @@
+language: java
+jdk:
+  - oraclejdk7
+
+script: cd eclipse-p2 && mvn clean install && cd .. && mvn clean install
