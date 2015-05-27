@@ -18,6 +18,7 @@ public class PastImplDelegate extends PastImpl {
 
 	public int nbUserUndo = 0;
 	public int nbSystemUndo = 0;
+	public int nbCallUndo = 0;
 	
 	private static Logger log = Logger.getLogger(PastImplDelegate.class);
 	
@@ -48,6 +49,7 @@ public class PastImplDelegate extends PastImpl {
 	public void undoLastAction() {
 		Step s = this.getSteps().remove(this.getSteps().size()-1);
 		this.nbUserUndo++;
+		this.nbCallUndo++;
 		this.nbSystemUndo += s.getLaunchedActions().size();
 		
 		s.undoActions();
@@ -57,6 +59,7 @@ public class PastImplDelegate extends PastImpl {
 	public void undoAction(Step s) {
 		List<Step> stepsToRedo = new ArrayList<Step>();
 		this.nbUserUndo++;
+		this.nbCallUndo++;
 		int limit = this.getSteps().indexOf(s);
 		
 		for (int i = this.getSteps().size()-1; i >= limit; i--) {

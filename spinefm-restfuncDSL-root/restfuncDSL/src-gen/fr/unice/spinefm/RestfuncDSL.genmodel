@@ -4,7 +4,7 @@
     editorDirectory="/restfuncDSL.editor/src" modelPluginID="restfuncDSL" forceOverwrite="true"
     modelName="RestfuncDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="restfuncDSL.edit"
-    editorPluginID="restfuncDSL.editor" runtimeVersion="2.9">
+    editorPluginID="restfuncDSL.editor" runtimeVersion="2.10">
   <genPackages prefix="RestfuncDSL" basePackage="fr.unice.spinefm" disposableProviderFactory="true"
       ecorePackage="RestfuncDSL.ecore#/">
     <genClasses ecoreClass="RestfuncDSL.ecore#//RestFunc">

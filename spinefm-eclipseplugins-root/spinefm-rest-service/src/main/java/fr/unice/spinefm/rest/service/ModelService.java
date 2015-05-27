@@ -49,7 +49,7 @@ import com.sun.jersey.api.client.WebResource;
 public class ModelService {
 
 	private static final String DEFAULT_SAVE_PATH = "/tmp/ycmodel";
-	private static final String PATH_GENERATOR_REST = "http://localhost:8080/yourcast-generator/rest/generate/";
+	private static final String PATH_GENERATOR_REST = "http://spinefm.unice.fr:8080/yourcast-generator/rest/generate/";
 	private static final String DIR_GENERATOR_OUTPUT = "/tmp/generated";
 	private static final String DEFAULT_PAST_PATH = "/tmp/spinePast";
 	
@@ -403,5 +403,31 @@ public class ModelService {
 		}
 		
 		
+	}
+	
+	@Path("pastdl/")
+	@GET
+	@Produces("text/xml")
+	public Response downloadPast(@PathParam("coreID") String coreID) {
+		
+		RestSpineFMInstance rspinefm;
+		try {
+			rspinefm = CoreRegistry.getInstance().getRestSpineFMInstance(coreID);
+			String path = savePast(coreID)+"/past.xmi";
+			File result = new File(path);
+				return Response.ok(result)
+				.header("Access-Control-Allow-Origin","*")
+				.header("Access-Control-Allow-Credentials", "true")
+				.header("Access-Control-Allow-Methods","OPTIONS, GET, POST")
+				.header("Access-Control-Allow-Headers","Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control")
+				.header("Content-Disposition", "attachment; filename="+result.getName())
+				.build();
+		} catch (CoreNotExistingException e) {
+			return RestMethodUtils.launchAndManageWebException(e, 404);
+		} catch (ElementNotFoundException e) {
+			return RestMethodUtils.launchAndManageWebException(e, 404);
+		} catch (FatalSpineFMException e) {
+			return RestMethodUtils.launchAndManageWebException(e, 500);
+		}
 	}
 }

@@ -126,7 +126,7 @@ public class RuleImplDelegate extends RuleImpl {
 			act.setConstraint(cst);
 			rInv.setAction(act);
 		}
-		log.info("Create inverse rule : "+rInv);
+		log.info("Create inverse rule : "+rInv+" "+rInv.getState()+" -> "+rInv.getAction());
 		return rInv;
 	}
 	

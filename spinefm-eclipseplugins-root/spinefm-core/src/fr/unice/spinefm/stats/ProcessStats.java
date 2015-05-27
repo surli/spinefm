@@ -26,6 +26,7 @@ public class ProcessStats {
 	private int numberOfCPS;
 	private int nbUserUndo;
 	private int nbSystemUndo;
+	private int nbCallsUndo;
 	
 	public ProcessStats() {}
 	
@@ -58,6 +59,7 @@ public class ProcessStats {
 		
 		this.nbSystemUndo = ((PastImplDelegate)cm.getPast()).nbSystemUndo;
 		this.nbUserUndo = ((PastImplDelegate)cm.getPast()).nbUserUndo;
+		this.nbCallsUndo = ((PastImplDelegate)cm.getPast()).nbCallUndo;
 	}
 	
 	@XmlElement
@@ -113,6 +115,11 @@ public class ProcessStats {
 	@XmlElement
 	public int getNbSystemUndo() {
 		return nbSystemUndo;
+	}
+	
+	@XmlElement
+	public int getNbCalledUndo() {
+		return nbCallsUndo;
 	}
 	
 }

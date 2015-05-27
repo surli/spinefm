@@ -737,9 +737,9 @@ ruleRightPart returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRightPartAccess().getActionACTIONParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getRightPartAccess().getActionACTIONFEATUREParserRuleCall_0_0()); 
 	    }
-		lv_action_0_0=ruleACTION		{
+		lv_action_0_0=ruleACTIONFEATURE		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRightPartRule());
 	        }
@@ -747,7 +747,7 @@ ruleRightPart returns [EObject current=null]
        			$current, 
        			"action",
         		lv_action_0_0, 
-        		"ACTION");
+        		"ACTIONFEATURE");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -811,17 +811,17 @@ ruleFM_STATE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 
 
 
-// Entry rule entryRuleACTION
-entryRuleACTION returns [String current=null] 
+// Entry rule entryRuleACTIONFEATURE
+entryRuleACTIONFEATURE returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getACTIONRule()); } 
-	 iv_ruleACTION=ruleACTION 
-	 { $current=$iv_ruleACTION.current.getText(); }  
+	{ newCompositeNode(grammarAccess.getACTIONFEATURERule()); } 
+	 iv_ruleACTIONFEATURE=ruleACTIONFEATURE 
+	 { $current=$iv_ruleACTIONFEATURE.current.getText(); }  
 	 EOF 
 ;
 
-// Rule ACTION
-ruleACTION returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+// Rule ACTIONFEATURE
+ruleACTIONFEATURE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -829,14 +829,14 @@ ruleACTION returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	kw='SELECT' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getACTIONAccess().getSELECTKeyword_0()); 
+        newLeafNode(kw, grammarAccess.getACTIONFEATUREAccess().getSELECTKeyword_0()); 
     }
 
     |
 	kw='DESELECT' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getACTIONAccess().getDESELECTKeyword_1()); 
+        newLeafNode(kw, grammarAccess.getACTIONFEATUREAccess().getDESELECTKeyword_1()); 
     }
 )
     ;

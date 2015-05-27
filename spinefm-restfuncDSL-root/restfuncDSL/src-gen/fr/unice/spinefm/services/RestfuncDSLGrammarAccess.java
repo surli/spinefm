@@ -370,22 +370,23 @@ public class RestfuncDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RightPart");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cActionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cActionACTIONParserRuleCall_0_0 = (RuleCall)cActionAssignment_0.eContents().get(0);
+		private final RuleCall cActionACTIONFEATUREParserRuleCall_0_0 = (RuleCall)cActionAssignment_0.eContents().get(0);
 		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cFeatureFeatureNamedParserRuleCall_1_0 = (RuleCall)cFeatureAssignment_1.eContents().get(0);
 		
+		////RightPart: action=(ActionOnFeature | ActionOnFM);
 		//RightPart:
-		//	action=ACTION feature=FeatureNamed;
+		//	action=ACTIONFEATURE feature=FeatureNamed;
 		public ParserRule getRule() { return rule; }
 
-		//action=ACTION feature=FeatureNamed
+		//action=ACTIONFEATURE feature=FeatureNamed
 		public Group getGroup() { return cGroup; }
 
-		//action=ACTION
+		//action=ACTIONFEATURE
 		public Assignment getActionAssignment_0() { return cActionAssignment_0; }
 
-		//ACTION
-		public RuleCall getActionACTIONParserRuleCall_0_0() { return cActionACTIONParserRuleCall_0_0; }
+		//ACTIONFEATURE
+		public RuleCall getActionACTIONFEATUREParserRuleCall_0_0() { return cActionACTIONFEATUREParserRuleCall_0_0; }
 
 		//feature=FeatureNamed
 		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
@@ -400,6 +401,7 @@ public class RestfuncDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSELECTEDKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cDESELECTEDKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
+		////ActionOnFM: action=ACTIONFM featureTrue=FeatureNamed featureFalse=FeatureNamed;
 		//FM_STATE:
 		//	"SELECTED" | "DESELECTED";
 		public ParserRule getRule() { return rule; }
@@ -414,13 +416,13 @@ public class RestfuncDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getDESELECTEDKeyword_1() { return cDESELECTEDKeyword_1; }
 	}
 
-	public class ACTIONElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ACTION");
+	public class ACTIONFEATUREElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ACTIONFEATURE");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cSELECTKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cDESELECTKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//ACTION:
+		//ACTIONFEATURE:
 		//	"SELECT" | "DESELECT";
 		public ParserRule getRule() { return rule; }
 
@@ -449,7 +451,7 @@ public class RestfuncDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private StarFeatureElements pStarFeature;
 	private RightPartElements pRightPart;
 	private FM_STATEElements pFM_STATE;
-	private ACTIONElements pACTION;
+	private ACTIONFEATUREElements pACTIONFEATURE;
 	private TerminalRule tIMPLY;
 	private TerminalRule tBEGIN_RULE;
 	private TerminalRule tSTAR;
@@ -620,8 +622,9 @@ public class RestfuncDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getStarFeatureAccess().getRule();
 	}
 
+	////RightPart: action=(ActionOnFeature | ActionOnFM);
 	//RightPart:
-	//	action=ACTION feature=FeatureNamed;
+	//	action=ACTIONFEATURE feature=FeatureNamed;
 	public RightPartElements getRightPartAccess() {
 		return (pRightPart != null) ? pRightPart : (pRightPart = new RightPartElements());
 	}
@@ -630,6 +633,7 @@ public class RestfuncDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRightPartAccess().getRule();
 	}
 
+	////ActionOnFM: action=ACTIONFM featureTrue=FeatureNamed featureFalse=FeatureNamed;
 	//FM_STATE:
 	//	"SELECTED" | "DESELECTED";
 	public FM_STATEElements getFM_STATEAccess() {
@@ -640,16 +644,17 @@ public class RestfuncDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getFM_STATEAccess().getRule();
 	}
 
-	//ACTION:
+	//ACTIONFEATURE:
 	//	"SELECT" | "DESELECT";
-	public ACTIONElements getACTIONAccess() {
-		return (pACTION != null) ? pACTION : (pACTION = new ACTIONElements());
+	public ACTIONFEATUREElements getACTIONFEATUREAccess() {
+		return (pACTIONFEATURE != null) ? pACTIONFEATURE : (pACTIONFEATURE = new ACTIONFEATUREElements());
 	}
 	
-	public ParserRule getACTIONRule() {
-		return getACTIONAccess().getRule();
+	public ParserRule getACTIONFEATURERule() {
+		return getACTIONFEATUREAccess().getRule();
 	}
 
+	////ACTIONFM: 'ADDCONSTRAINT';
 	//terminal IMPLY:
 	//	"=>";
 	public TerminalRule getIMPLYRule() {

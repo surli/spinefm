@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalRestfuncDSLLexer extends Lexer {
-    public static final int RULE_ID=15;
     public static final int RULE_BEGIN_RULE=4;
+    public static final int RULE_ID=15;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;

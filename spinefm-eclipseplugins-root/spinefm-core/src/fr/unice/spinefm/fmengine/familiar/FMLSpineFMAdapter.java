@@ -367,4 +367,11 @@ public class FMLSpineFMAdapter implements FMSpineFMAdapter {
 	public boolean isValidConfiguration(String confID) throws FMEngineException {
 		return this.getSFI().isValid(confID);
 	}
+
+	@Override
+	public Set<Set<Feature>> getAllConfigurations(String confName)
+			throws FMEngineException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

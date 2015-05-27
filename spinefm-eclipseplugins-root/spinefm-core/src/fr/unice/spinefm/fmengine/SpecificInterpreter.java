@@ -3,6 +3,7 @@ package fr.unice.spinefm.fmengine;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Set;
 
 import fr.unice.spinefm.fmengine.exceptions.FMEngineException;
 
@@ -42,4 +43,6 @@ public interface SpecificInterpreter {
 	public boolean isValid(String configurationID) throws FMEngineException;
 	
 	public boolean isComplete(String configurationID) throws FMEngineException;
+	
+	public Set<Set<String>> getAvailableConfigurations(String configurationID) throws FMEngineException;
 }

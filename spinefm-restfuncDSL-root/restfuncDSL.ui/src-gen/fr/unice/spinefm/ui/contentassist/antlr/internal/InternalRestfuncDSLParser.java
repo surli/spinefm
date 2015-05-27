@@ -24,8 +24,8 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BEGIN_RULE", "RULE_POINTS", "RULE_IMPLY", "RULE_END_RULE", "RULE_SOURCEKEY", "RULE_EQUAL", "RULE_TARGETKEY", "RULE_COMMA", "RULE_DOT", "RULE_VARBEGIN", "RULE_STAR", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SELECTED'", "'DESELECTED'", "'SELECT'", "'DESELECT'"
     };
-    public static final int RULE_BEGIN_RULE=4;
     public static final int RULE_ID=15;
+    public static final int RULE_BEGIN_RULE=4;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
@@ -1206,21 +1206,21 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleFM_STATE"
 
 
-    // $ANTLR start "entryRuleACTION"
-    // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:459:1: entryRuleACTION : ruleACTION EOF ;
-    public final void entryRuleACTION() throws RecognitionException {
+    // $ANTLR start "entryRuleACTIONFEATURE"
+    // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:459:1: entryRuleACTIONFEATURE : ruleACTIONFEATURE EOF ;
+    public final void entryRuleACTIONFEATURE() throws RecognitionException {
         try {
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:460:1: ( ruleACTION EOF )
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:461:1: ruleACTION EOF
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:460:1: ( ruleACTIONFEATURE EOF )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:461:1: ruleACTIONFEATURE EOF
             {
-             before(grammarAccess.getACTIONRule()); 
-            pushFollow(FOLLOW_ruleACTION_in_entryRuleACTION918);
-            ruleACTION();
+             before(grammarAccess.getACTIONFEATURERule()); 
+            pushFollow(FOLLOW_ruleACTIONFEATURE_in_entryRuleACTIONFEATURE918);
+            ruleACTIONFEATURE();
 
             state._fsp--;
 
-             after(grammarAccess.getACTIONRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleACTION925); 
+             after(grammarAccess.getACTIONFEATURERule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleACTIONFEATURE925); 
 
             }
 
@@ -1233,35 +1233,35 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "entryRuleACTION"
+    // $ANTLR end "entryRuleACTIONFEATURE"
 
 
-    // $ANTLR start "ruleACTION"
-    // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:468:1: ruleACTION : ( ( rule__ACTION__Alternatives ) ) ;
-    public final void ruleACTION() throws RecognitionException {
+    // $ANTLR start "ruleACTIONFEATURE"
+    // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:468:1: ruleACTIONFEATURE : ( ( rule__ACTIONFEATURE__Alternatives ) ) ;
+    public final void ruleACTIONFEATURE() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:472:2: ( ( ( rule__ACTION__Alternatives ) ) )
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:473:1: ( ( rule__ACTION__Alternatives ) )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:472:2: ( ( ( rule__ACTIONFEATURE__Alternatives ) ) )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:473:1: ( ( rule__ACTIONFEATURE__Alternatives ) )
             {
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:473:1: ( ( rule__ACTION__Alternatives ) )
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:474:1: ( rule__ACTION__Alternatives )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:473:1: ( ( rule__ACTIONFEATURE__Alternatives ) )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:474:1: ( rule__ACTIONFEATURE__Alternatives )
             {
-             before(grammarAccess.getACTIONAccess().getAlternatives()); 
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:475:1: ( rule__ACTION__Alternatives )
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:475:2: rule__ACTION__Alternatives
+             before(grammarAccess.getACTIONFEATUREAccess().getAlternatives()); 
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:475:1: ( rule__ACTIONFEATURE__Alternatives )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:475:2: rule__ACTIONFEATURE__Alternatives
             {
-            pushFollow(FOLLOW_rule__ACTION__Alternatives_in_ruleACTION951);
-            rule__ACTION__Alternatives();
+            pushFollow(FOLLOW_rule__ACTIONFEATURE__Alternatives_in_ruleACTIONFEATURE951);
+            rule__ACTIONFEATURE__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getACTIONAccess().getAlternatives()); 
+             after(grammarAccess.getACTIONFEATUREAccess().getAlternatives()); 
 
             }
 
@@ -1280,7 +1280,7 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "ruleACTION"
+    // $ANTLR end "ruleACTIONFEATURE"
 
 
     // $ANTLR start "rule__FeatureNamed__Alternatives"
@@ -1475,9 +1475,9 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__FM_STATE__Alternatives"
 
 
-    // $ANTLR start "rule__ACTION__Alternatives"
-    // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:541:1: rule__ACTION__Alternatives : ( ( 'SELECT' ) | ( 'DESELECT' ) );
-    public final void rule__ACTION__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__ACTIONFEATURE__Alternatives"
+    // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:541:1: rule__ACTIONFEATURE__Alternatives : ( ( 'SELECT' ) | ( 'DESELECT' ) );
+    public final void rule__ACTIONFEATURE__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -1505,9 +1505,9 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
                     // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:546:1: ( 'SELECT' )
                     // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:547:1: 'SELECT'
                     {
-                     before(grammarAccess.getACTIONAccess().getSELECTKeyword_0()); 
-                    match(input,24,FOLLOW_24_in_rule__ACTION__Alternatives1109); 
-                     after(grammarAccess.getACTIONAccess().getSELECTKeyword_0()); 
+                     before(grammarAccess.getACTIONFEATUREAccess().getSELECTKeyword_0()); 
+                    match(input,24,FOLLOW_24_in_rule__ACTIONFEATURE__Alternatives1109); 
+                     after(grammarAccess.getACTIONFEATUREAccess().getSELECTKeyword_0()); 
 
                     }
 
@@ -1520,9 +1520,9 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
                     // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:554:6: ( 'DESELECT' )
                     // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:555:1: 'DESELECT'
                     {
-                     before(grammarAccess.getACTIONAccess().getDESELECTKeyword_1()); 
-                    match(input,25,FOLLOW_25_in_rule__ACTION__Alternatives1129); 
-                     after(grammarAccess.getACTIONAccess().getDESELECTKeyword_1()); 
+                     before(grammarAccess.getACTIONFEATUREAccess().getDESELECTKeyword_1()); 
+                    match(input,25,FOLLOW_25_in_rule__ACTIONFEATURE__Alternatives1129); 
+                     after(grammarAccess.getACTIONFEATUREAccess().getDESELECTKeyword_1()); 
 
                     }
 
@@ -1543,7 +1543,7 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__ACTION__Alternatives"
+    // $ANTLR end "rule__ACTIONFEATURE__Alternatives"
 
 
     // $ANTLR start "rule__RestFunc__Group__0"
@@ -4864,25 +4864,25 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RightPart__ActionAssignment_0"
-    // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1828:1: rule__RightPart__ActionAssignment_0 : ( ruleACTION ) ;
+    // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1828:1: rule__RightPart__ActionAssignment_0 : ( ruleACTIONFEATURE ) ;
     public final void rule__RightPart__ActionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1832:1: ( ( ruleACTION ) )
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1833:1: ( ruleACTION )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1832:1: ( ( ruleACTIONFEATURE ) )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1833:1: ( ruleACTIONFEATURE )
             {
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1833:1: ( ruleACTION )
-            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1834:1: ruleACTION
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1833:1: ( ruleACTIONFEATURE )
+            // ../restfuncDSL.ui/src-gen/fr/unice/spinefm/ui/contentassist/antlr/internal/InternalRestfuncDSL.g:1834:1: ruleACTIONFEATURE
             {
-             before(grammarAccess.getRightPartAccess().getActionACTIONParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleACTION_in_rule__RightPart__ActionAssignment_03681);
-            ruleACTION();
+             before(grammarAccess.getRightPartAccess().getActionACTIONFEATUREParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_ruleACTIONFEATURE_in_rule__RightPart__ActionAssignment_03681);
+            ruleACTIONFEATURE();
 
             state._fsp--;
 
-             after(grammarAccess.getRightPartAccess().getActionACTIONParserRuleCall_0_0()); 
+             after(grammarAccess.getRightPartAccess().getActionACTIONFEATUREParserRuleCall_0_0()); 
 
             }
 
@@ -4992,16 +4992,16 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_ruleFM_STATE_in_entryRuleFM_STATE858 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFM_STATE865 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__FM_STATE__Alternatives_in_ruleFM_STATE891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleACTION_in_entryRuleACTION918 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleACTION925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ACTION__Alternatives_in_ruleACTION951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleACTIONFEATURE_in_entryRuleACTIONFEATURE918 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleACTIONFEATURE925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ACTIONFEATURE__Alternatives_in_ruleACTIONFEATURE951 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSingleFeature_in_rule__FeatureNamed__Alternatives987 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVariableFeature_in_rule__FeatureNamed__Alternatives1004 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStarFeature_in_rule__FeatureNamed__Alternatives1021 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_rule__FM_STATE__Alternatives1054 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_rule__FM_STATE__Alternatives1074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__ACTION__Alternatives1109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__ACTION__Alternatives1129 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__ACTIONFEATURE__Alternatives1109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__ACTIONFEATURE__Alternatives1129 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RestFunc__Group__0__Impl_in_rule__RestFunc__Group__01161 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__RestFunc__Group__1_in_rule__RestFunc__Group__01164 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RestFunc__InitAssignment_0_in_rule__RestFunc__Group__0__Impl1191 = new BitSet(new long[]{0x0000000000000002L});
@@ -5106,7 +5106,7 @@ public class InternalRestfuncDSLParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_ruleVariable_in_rule__VariableFeature__VariableAssignment_23588 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__IdAssignment_13619 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__StarFeature__FeatureNameAssignment_03650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleACTION_in_rule__RightPart__ActionAssignment_03681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleACTIONFEATURE_in_rule__RightPart__ActionAssignment_03681 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeatureNamed_in_rule__RightPart__FeatureAssignment_13712 = new BitSet(new long[]{0x0000000000000002L});
 
 }

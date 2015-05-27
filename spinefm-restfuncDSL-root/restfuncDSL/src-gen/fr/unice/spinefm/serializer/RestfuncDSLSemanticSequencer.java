@@ -144,7 +144,7 @@ public class RestfuncDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     (action=ACTION feature=FeatureNamed)
+	 *     (action=ACTIONFEATURE feature=FeatureNamed)
 	 */
 	protected void sequence_RightPart(EObject context, RightPart semanticObject) {
 		if(errorAcceptor != null) {
@@ -155,7 +155,7 @@ public class RestfuncDSLSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getRightPartAccess().getActionACTIONParserRuleCall_0_0(), semanticObject.getAction());
+		feeder.accept(grammarAccess.getRightPartAccess().getActionACTIONFEATUREParserRuleCall_0_0(), semanticObject.getAction());
 		feeder.accept(grammarAccess.getRightPartAccess().getFeatureFeatureNamedParserRuleCall_1_0(), semanticObject.getFeature());
 		feeder.finish();
 	}

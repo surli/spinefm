@@ -39,7 +39,7 @@ public class RestfuncDSLParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getFeatureNamedAccess().getAlternatives(), "rule__FeatureNamed__Alternatives");
 					put(grammarAccess.getFM_STATEAccess().getAlternatives(), "rule__FM_STATE__Alternatives");
-					put(grammarAccess.getACTIONAccess().getAlternatives(), "rule__ACTION__Alternatives");
+					put(grammarAccess.getACTIONFEATUREAccess().getAlternatives(), "rule__ACTIONFEATURE__Alternatives");
 					put(grammarAccess.getRestFuncAccess().getGroup(), "rule__RestFunc__Group__0");
 					put(grammarAccess.getRuleStringAccess().getGroup(), "rule__RuleString__Group__0");
 					put(grammarAccess.getSourceAndTargetAccess().getGroup(), "rule__SourceAndTarget__Group__0");

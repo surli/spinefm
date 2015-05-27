@@ -78,9 +78,9 @@ public class UserInitImplDelegate extends UserInitImpl {
 		Debug.setSaveScript(true);
 		Debug.setDisplayScript(false);
 		
-		String rootPath = Utils.getDirectoryFromModelPath(this.getFilePath());
 		
 		if (this.getPastPath() == null) {
+			String rootPath = Utils.getDirectoryFromModelPath(this.getFilePath());
 			if (this.getFilePath() != null && rootPath != null) {
 				String instanceID = UUID.randomUUID().toString().replace("-", "");
 				this.pastActions = HistoryModelFactory.eINSTANCE.createPast();

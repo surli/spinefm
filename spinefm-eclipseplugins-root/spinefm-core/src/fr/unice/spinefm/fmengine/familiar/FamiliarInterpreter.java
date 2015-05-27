@@ -9,7 +9,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 
@@ -208,26 +210,6 @@ public class FamiliarInterpreter implements SpecificInterpreter {
 	public FMLShell getShell() {
 		return _shell;
 	}
-	
-	public static void main(String args[]) {
-		FamiliarInterpreter sfi = new FamiliarInterpreter();
-		
-		try {
-			sfi.eval("a = FM(A: (B|C); B <-> C;)");
-			FeatureModelVariable fmv = sfi.getFMVariable("a");
-			System.out.println("Valid: "+fmv.isValid());
-		} catch (VariableNotExistingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (VariableAmbigousConflictException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (FMEngineException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
 
 	@Override
 	public void setVerbose(boolean b) {
@@ -290,45 +272,49 @@ public class FamiliarInterpreter implements SpecificInterpreter {
 		}
 	}
 
-	/*public static void main(String args[]) {
+	@Override
+	public Set<Set<String>> getAvailableConfigurations(String configurationID)
+			throws FMEngineException {
+		String configFM = configurationID+"fm";
+		String cmd = configFM +" = asFM "+configurationID;
+		this.eval(cmd);
+		
+		String var = "allConfig";
+		this.eval(var+" = configs "+configFM);
+		HashSet<Set<String>> result = new HashSet<Set<String>>();
+		try {
+			SetVariable sv = this.getSetVariable(var);
+			for (Variable v : sv.getVars()) {
+				HashSet<String> configResult = new HashSet<String>();
+				SetVariable config = (SetVariable)v;
+				for (Variable v2 : config.getVars()) {
+					configResult.add(v2.getValue());
+				}
+				result.add(configResult);
+			}
+		} catch (Exception e) {
+			throw new FMEngineException(e.getMessage());
+		}
+		return result;
+		
+	}
+
+	public static void main(String args[]) throws FMEngineException {
 		FamiliarInterpreter sfi = new FamiliarInterpreter();
 		System.out.println("Instanciation de SFI");
-		//String FMA = "source = FM(Source: TypeInfo Criteria; TypeInfo: PictureAlbum; PictureAlbum: (Picasa|FlickR); Criteria: (Sort|Filter)+; Sort: Date; Filter: Name; Date <-> Picasa;)";
-		String fmlfile = "/Users/urli/yourcast/yourcast/mde/fr.unice.yourcast.models.cspl/models/testmodels/fml/source.fml";
-		try {
-			//sfi.eval(FMA);
-			sfi.evalFile(fmlfile);
+		String FMA = "source = FM(Source: TypeInfo Criteria; TypeInfo: PictureAlbum; PictureAlbum: (Picasa|FlickR); Criteria: (Sort|Filter)+; Sort: Date; Filter: Name; Date <-> Picasa;)";
+		//String fmlfile = "/Users/urli/yourcast/yourcast/mde/fr.unice.yourcast.models.cspl/models/testmodels/fml/source.fml";
+		sfi.eval(FMA);
+		
+			//sfi.evalFile(fmlfile);
 			System.out.println("Eval de FMA");
 			System.out.println("Env : "+sfi.getAllIdentifiers());
-			Variable fmav = sfi.getVariable("source");
-			FeatureModelVariable fmv = (FeatureModelVariable) fmav;
-			FeatureVariable root = fmv.root();
-			System.out.println("Root:"+fmv.getVOP(root.getFtName()).getSpecificValue());
-			SetVariable sv = root.children();
-			Set<Variable> svv = sv.getVars();
-			for(Variable v : svv) {
-				if (v.getType().equals("FEATURE")) {
-					FeatureVariable fv = (FeatureVariable)v;
-					System.out.println(fv.getCompleteIdentifier()+" "+fmv.getVOP(fv.getFtName()).getSpecificValue());
-					SetVariable children = fv.children();
-					for (Variable v2 : children.getVars()) {
-						if (v.getType().equals("FEATURE")) {
-							FeatureVariable fv2 = (FeatureVariable)v2;
-							System.out.println(fv2.getCompleteIdentifier()+" "+fmv.getVOP(fv2.getFtName()).getSpecificValue());
-						}
-					}
-				}
-			}
 			
-		} catch (VariableNotExistingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (VariableAmbigousConflictException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-	}*/
+			sfi.eval("config = configuration source");
+			Set<Set<String>> result = sfi.getAvailableConfigurations("config");
+			System.out.println("Début de cofniguration : "+result);
+			sfi.eval("select Picasa in config");
+			result = sfi.getAvailableConfigurations("config");
+			System.out.println("Après sélection : "+result);
+	}
 }

@@ -119,7 +119,10 @@ public class Utils {
 	}
 	
 	public static String getDirectoryFromModelPath(String modelPath) {
-		File f = new File(modelPath);
-		return f.getParent();
+		if (modelPath != null) {
+			File f = new File(modelPath);
+			return f.getParent();
+		} else
+			return null;
 	}
 }

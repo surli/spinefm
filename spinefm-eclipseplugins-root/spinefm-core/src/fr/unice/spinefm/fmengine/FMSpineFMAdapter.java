@@ -64,4 +64,6 @@ public interface FMSpineFMAdapter {
 	boolean isValidConfiguration(String confID) throws FMEngineException;
 
 	void copyElement(String elementSource, String elementTarget) throws FMEngineException;
+	
+	Set<Set<Feature>> getAllConfigurations(String confName) throws FMEngineException;
 }

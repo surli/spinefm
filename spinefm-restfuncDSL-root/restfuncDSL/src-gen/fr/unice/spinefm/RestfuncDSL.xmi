@@ -178,7 +178,7 @@
         <elements xsi:type="xtext:Keyword" value="DESELECTED"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="ACTION">
+    <rules xsi:type="xtext:ParserRule" name="ACTIONFEATURE">
       <type metamodel="/1/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>

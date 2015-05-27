@@ -1757,7 +1757,7 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRightPart"
-    // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:733:1: ruleRightPart returns [EObject current=null] : ( ( (lv_action_0_0= ruleACTION ) ) ( (lv_feature_1_0= ruleFeatureNamed ) ) ) ;
+    // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:733:1: ruleRightPart returns [EObject current=null] : ( ( (lv_action_0_0= ruleACTIONFEATURE ) ) ( (lv_feature_1_0= ruleFeatureNamed ) ) ) ;
     public final EObject ruleRightPart() throws RecognitionException {
         EObject current = null;
 
@@ -1769,23 +1769,23 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:736:28: ( ( ( (lv_action_0_0= ruleACTION ) ) ( (lv_feature_1_0= ruleFeatureNamed ) ) ) )
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:737:1: ( ( (lv_action_0_0= ruleACTION ) ) ( (lv_feature_1_0= ruleFeatureNamed ) ) )
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:736:28: ( ( ( (lv_action_0_0= ruleACTIONFEATURE ) ) ( (lv_feature_1_0= ruleFeatureNamed ) ) ) )
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:737:1: ( ( (lv_action_0_0= ruleACTIONFEATURE ) ) ( (lv_feature_1_0= ruleFeatureNamed ) ) )
             {
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:737:1: ( ( (lv_action_0_0= ruleACTION ) ) ( (lv_feature_1_0= ruleFeatureNamed ) ) )
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:737:2: ( (lv_action_0_0= ruleACTION ) ) ( (lv_feature_1_0= ruleFeatureNamed ) )
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:737:1: ( ( (lv_action_0_0= ruleACTIONFEATURE ) ) ( (lv_feature_1_0= ruleFeatureNamed ) ) )
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:737:2: ( (lv_action_0_0= ruleACTIONFEATURE ) ) ( (lv_feature_1_0= ruleFeatureNamed ) )
             {
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:737:2: ( (lv_action_0_0= ruleACTION ) )
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:738:1: (lv_action_0_0= ruleACTION )
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:737:2: ( (lv_action_0_0= ruleACTIONFEATURE ) )
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:738:1: (lv_action_0_0= ruleACTIONFEATURE )
             {
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:738:1: (lv_action_0_0= ruleACTION )
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:739:3: lv_action_0_0= ruleACTION
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:738:1: (lv_action_0_0= ruleACTIONFEATURE )
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:739:3: lv_action_0_0= ruleACTIONFEATURE
             {
              
-            	        newCompositeNode(grammarAccess.getRightPartAccess().getActionACTIONParserRuleCall_0_0()); 
+            	        newCompositeNode(grammarAccess.getRightPartAccess().getActionACTIONFEATUREParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleACTION_in_ruleRightPart1575);
-            lv_action_0_0=ruleACTION();
+            pushFollow(FOLLOW_ruleACTIONFEATURE_in_ruleRightPart1575);
+            lv_action_0_0=ruleACTIONFEATURE();
 
             state._fsp--;
 
@@ -1797,7 +1797,7 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"action",
                     		lv_action_0_0, 
-                    		"ACTION");
+                    		"ACTIONFEATURE");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1965,26 +1965,26 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleFM_STATE"
 
 
-    // $ANTLR start "entryRuleACTION"
-    // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:815:1: entryRuleACTION returns [String current=null] : iv_ruleACTION= ruleACTION EOF ;
-    public final String entryRuleACTION() throws RecognitionException {
+    // $ANTLR start "entryRuleACTIONFEATURE"
+    // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:815:1: entryRuleACTIONFEATURE returns [String current=null] : iv_ruleACTIONFEATURE= ruleACTIONFEATURE EOF ;
+    public final String entryRuleACTIONFEATURE() throws RecognitionException {
         String current = null;
 
-        AntlrDatatypeRuleToken iv_ruleACTION = null;
+        AntlrDatatypeRuleToken iv_ruleACTIONFEATURE = null;
 
 
         try {
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:816:2: (iv_ruleACTION= ruleACTION EOF )
-            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:817:2: iv_ruleACTION= ruleACTION EOF
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:816:2: (iv_ruleACTIONFEATURE= ruleACTIONFEATURE EOF )
+            // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:817:2: iv_ruleACTIONFEATURE= ruleACTIONFEATURE EOF
             {
-             newCompositeNode(grammarAccess.getACTIONRule()); 
-            pushFollow(FOLLOW_ruleACTION_in_entryRuleACTION1742);
-            iv_ruleACTION=ruleACTION();
+             newCompositeNode(grammarAccess.getACTIONFEATURERule()); 
+            pushFollow(FOLLOW_ruleACTIONFEATURE_in_entryRuleACTIONFEATURE1742);
+            iv_ruleACTIONFEATURE=ruleACTIONFEATURE();
 
             state._fsp--;
 
-             current =iv_ruleACTION.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleACTION1753); 
+             current =iv_ruleACTIONFEATURE.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleACTIONFEATURE1753); 
 
             }
 
@@ -1998,12 +1998,12 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleACTION"
+    // $ANTLR end "entryRuleACTIONFEATURE"
 
 
-    // $ANTLR start "ruleACTION"
-    // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:824:1: ruleACTION returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'SELECT' | kw= 'DESELECT' ) ;
-    public final AntlrDatatypeRuleToken ruleACTION() throws RecognitionException {
+    // $ANTLR start "ruleACTIONFEATURE"
+    // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:824:1: ruleACTIONFEATURE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'SELECT' | kw= 'DESELECT' ) ;
+    public final AntlrDatatypeRuleToken ruleACTIONFEATURE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token kw=null;
@@ -2034,10 +2034,10 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:829:2: kw= 'SELECT'
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleACTION1791); 
+                    kw=(Token)match(input,24,FOLLOW_24_in_ruleACTIONFEATURE1791); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getACTIONAccess().getSELECTKeyword_0()); 
+                            newLeafNode(kw, grammarAccess.getACTIONFEATUREAccess().getSELECTKeyword_0()); 
                         
 
                     }
@@ -2045,10 +2045,10 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../restfuncDSL/src-gen/fr/unice/spinefm/parser/antlr/internal/InternalRestfuncDSL.g:836:2: kw= 'DESELECT'
                     {
-                    kw=(Token)match(input,25,FOLLOW_25_in_ruleACTION1810); 
+                    kw=(Token)match(input,25,FOLLOW_25_in_ruleACTIONFEATURE1810); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getACTIONAccess().getDESELECTKeyword_1()); 
+                            newLeafNode(kw, grammarAccess.getACTIONFEATUREAccess().getDESELECTKeyword_1()); 
                         
 
                     }
@@ -2070,7 +2070,7 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleACTION"
+    // $ANTLR end "ruleACTIONFEATURE"
 
     // Delegated rules
 
@@ -2137,15 +2137,15 @@ public class InternalRestfuncDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_STAR_in_ruleStarFeature1484 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRightPart_in_entryRuleRightPart1519 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRightPart1529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleACTION_in_ruleRightPart1575 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleACTIONFEATURE_in_ruleRightPart1575 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleFeatureNamed_in_ruleRightPart1596 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFM_STATE_in_entryRuleFM_STATE1633 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFM_STATE1644 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_ruleFM_STATE1682 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_ruleFM_STATE1701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleACTION_in_entryRuleACTION1742 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleACTION1753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleACTION1791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleACTION1810 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleACTIONFEATURE_in_entryRuleACTIONFEATURE1742 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleACTIONFEATURE1753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleACTIONFEATURE1791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleACTIONFEATURE1810 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -50,8 +50,18 @@ public class CompositeConfigurationImplDelegate extends
 	public Configuration getConfigurationByName(String confName) throws ConfigNotFoundException {
 		if (this.mapOfSub.containsKey(confName))
 			return this.mapOfSub.get(confName);
-		else
+		else {
+			String[] elementName = confName.split("_");
+			if (elementName.length == 4 && elementName[2].equals("globalcontext")) {
+				String endName = elementName[2]+"_"+elementName[3];
+				for (String s : this.mapOfSub.keySet()) {
+					if (s.endsWith(endName)) {
+						return this.mapOfSub.get(s);
+					}
+				}
+			}
 			throw new ConfigNotFoundException("Config not found : "+confName);
+		}		
 	}
 	
 	@Override

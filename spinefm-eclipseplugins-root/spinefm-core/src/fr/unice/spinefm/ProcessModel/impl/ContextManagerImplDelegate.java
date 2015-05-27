@@ -67,6 +67,13 @@ public class ContextManagerImplDelegate extends ContextManagerImpl {
 		if (this.mapOfCPS.containsKey(id)) {
 			return this.mapOfCPS.get(id);
 		} else {
+			String[] idElements = id.split("_");
+			if (idElements.length == 3 && idElements[1].equals("globalcontext")) {
+				String idRebuilt = this.getId()+"_"+idElements[1]+"_"+idElements[2];
+				if (this.mapOfCPS.containsKey(idRebuilt)) {
+					return this.mapOfCPS.get(idRebuilt);
+				}
+			}
 			throw new CPSNotFoundException("CPS with id "+id+" does not exist.");
 		}
 	}

@@ -3,6 +3,8 @@ package fr.unice.spinefm.restfunc;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import fr.unice.spinefm.ConfigurationModel.ConfigurationModelFactory;
 import fr.unice.spinefm.RFModel.ConfigurationState;
 import fr.unice.spinefm.FMModel.Constraint;
@@ -20,6 +22,7 @@ import fr.unice.spinefm.ActionModel.SystemActionModel.ActionDeselect;
 import fr.unice.spinefm.ActionModel.SystemActionModel.ActionOnFM;
 import fr.unice.spinefm.ActionModel.SystemActionModel.ActionSelect;
 import fr.unice.spinefm.ActionModel.SystemActionModel.SystemActionModelFactory;
+import fr.unice.spinefm.ActionModel.UserActionModel.impl.UserInitImplDelegate;
 import fr.unice.spinefm.RFModel.RFModelFactory;
 import fr.unice.spinefm.RFModel.RestrictionFunction;
 import fr.unice.spinefm.RFModel.Rule;
@@ -30,6 +33,8 @@ import fr.unice.spinefm.restfuncDSL.*;
 import fr.unice.spinefm.utils.Debug;
 
 public class RuleFactory {
+	
+	private static Logger log = Logger.getLogger(RuleFactory.class);
 	
 	public static void createRuleAndPutItInModel(RestrictionFunction rf, DEAssociation dea, String rfPathName, RestrictionFunctionParser rfp, MultipleSoftwareProductLine mspl) throws RestrictionFunctionParserException, FeatureNotFoundException, RuleFactoryException, DomainElementNotFoundException {
 		RestFunc restfunc = rfp.fileParser(rfPathName,rf.getId());
@@ -58,6 +63,7 @@ public class RuleFactory {
 			LeftPart lp = rs.getLeft();
 
 			RightPart rp = rs.getRight();
+			//ActionFeature aof = (ActionOnFeature)rp.getAction();
 			FeatureNamed fnrp = rp.getFeature();
 
 			if (fnrp instanceof SingleFeature) {
@@ -188,6 +194,7 @@ public class RuleFactory {
 		}
 		r.setAction(action);
 		r.setState(cs);
+		log.info("Création d'une règle : \t"+ruleID+" "+cs+" -> "+action);
 		rf.getRules().add(r);
 	}
 

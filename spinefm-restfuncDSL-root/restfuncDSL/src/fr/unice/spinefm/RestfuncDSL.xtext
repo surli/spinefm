@@ -15,9 +15,13 @@ SingleFeature: featureName=ID;
 VariableFeature: featureName=ID DOT variable=Variable;
 Variable: VARBEGIN id=ID;
 StarFeature: featureName=ID DOT STAR;
-RightPart: action=ACTION feature=FeatureNamed;
+//RightPart: action=(ActionOnFeature | ActionOnFM);
+RightPart: action=ACTIONFEATURE feature=FeatureNamed ;
+//ActionOnFM: action=ACTIONFM featureTrue=FeatureNamed featureFalse=FeatureNamed;
+
 FM_STATE: 'SELECTED' | 'DESELECTED';
-ACTION: 'SELECT' | 'DESELECT';
+ACTIONFEATURE: 'SELECT' | 'DESELECT';
+//ACTIONFM: 'ADDCONSTRAINT';
 terminal IMPLY: '=>';
 terminal BEGIN_RULE: 'rule';
 terminal STAR: '*';

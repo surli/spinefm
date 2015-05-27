@@ -455,25 +455,25 @@ finally {
 
 
 
-// Entry rule entryRuleACTION
-entryRuleACTION 
+// Entry rule entryRuleACTIONFEATURE
+entryRuleACTIONFEATURE 
 :
-{ before(grammarAccess.getACTIONRule()); }
-	 ruleACTION
-{ after(grammarAccess.getACTIONRule()); } 
+{ before(grammarAccess.getACTIONFEATURERule()); }
+	 ruleACTIONFEATURE
+{ after(grammarAccess.getACTIONFEATURERule()); } 
 	 EOF 
 ;
 
-// Rule ACTION
-ruleACTION
+// Rule ACTIONFEATURE
+ruleACTIONFEATURE
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getACTIONAccess().getAlternatives()); }
-(rule__ACTION__Alternatives)
-{ after(grammarAccess.getACTIONAccess().getAlternatives()); }
+{ before(grammarAccess.getACTIONFEATUREAccess().getAlternatives()); }
+(rule__ACTIONFEATURE__Alternatives)
+{ after(grammarAccess.getACTIONFEATUREAccess().getAlternatives()); }
 )
 
 ;
@@ -538,25 +538,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ACTION__Alternatives
+rule__ACTIONFEATURE__Alternatives
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getACTIONAccess().getSELECTKeyword_0()); }
+{ before(grammarAccess.getACTIONFEATUREAccess().getSELECTKeyword_0()); }
 
 	'SELECT' 
 
-{ after(grammarAccess.getACTIONAccess().getSELECTKeyword_0()); }
+{ after(grammarAccess.getACTIONFEATUREAccess().getSELECTKeyword_0()); }
 )
 
     |(
-{ before(grammarAccess.getACTIONAccess().getDESELECTKeyword_1()); }
+{ before(grammarAccess.getACTIONFEATUREAccess().getDESELECTKeyword_1()); }
 
 	'DESELECT' 
 
-{ after(grammarAccess.getACTIONAccess().getDESELECTKeyword_1()); }
+{ after(grammarAccess.getACTIONFEATUREAccess().getDESELECTKeyword_1()); }
 )
 
 ;
@@ -1831,8 +1831,8 @@ rule__RightPart__ActionAssignment_0
     }
 :
 (
-{ before(grammarAccess.getRightPartAccess().getActionACTIONParserRuleCall_0_0()); }
-	ruleACTION{ after(grammarAccess.getRightPartAccess().getActionACTIONParserRuleCall_0_0()); }
+{ before(grammarAccess.getRightPartAccess().getActionACTIONFEATUREParserRuleCall_0_0()); }
+	ruleACTIONFEATURE{ after(grammarAccess.getRightPartAccess().getActionACTIONFEATUREParserRuleCall_0_0()); }
 )
 
 ;
