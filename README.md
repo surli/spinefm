@@ -1,4 +1,4 @@
-SpineFM
+SpineFM ![Build status](https://travis-ci.org/surli/spinefm.svg?branch=master)
 =======
 
 ## Author
@@ -27,6 +27,7 @@ SpineFM is a tooled approach which aims to describe a software product line with
 3. Import maven project in eclipse and select directory spinefm (the root of this repository)
 4. Open spinefm-root project and open file target.target inside it
 5. Click on "Set as target platform" (link in the top right of target definition view) and wait for eclipse to resolve dependencies
+![Set as target platform](https://raw.githubusercontent.com/surli/spinefm/master/documentation/images/2-set-target-platform.png)
 6. Test the setup by launching spinefm-core tests: all tests must pass (be careful that you must use java 1.7 to launch tests)
 
 ### Create your own domain model
@@ -34,9 +35,14 @@ SpineFM is a tooled approach which aims to describe a software product line with
 #### Creation of the domain model
 1. Create a new project in eclipse and create a directory "model"
 2. Open the file "MetamodelSpineFM.ecore" contained in directory "model" of project spinefm-core
+![Open metamodel](https://raw.githubusercontent.com/surli/spinefm/master/documentation/images/2-set-target-platform.png)
 3. Open the hierarchy spinefm/MSPLModel, select "MultipleSoftwareProductLine" right click, select "Create dynamic instance" and create the instance inside your new project under directory "model"
+![Create new model](https://raw.githubusercontent.com/surli/spinefm/master/documentation/images/3-start-domain-model.png)
 4. Open your newly created model with the Ecore editor view and display property view
+![Open Ecore editor](https://raw.githubusercontent.com/surli/spinefm/master/documentation/images/4-open-ecore-editor.png)
+![Open Property View](https://raw.githubusercontent.com/surli/spinefm/master/documentation/images/5-open-property-view.png)
 5. Give an ID to the MultipleSoftwareProductLine concept 
+![Set MSPL ID](https://raw.githubusercontent.com/surli/spinefm/master/documentation/images/6-set-mspl-id.png)
 
 #### Definition of concepts
 
