@@ -21,6 +21,8 @@
 		<tycho-extras-version>0.19.0</tycho-extras-version>
 		<sonar.forceAnalysis>true</sonar.forceAnalysis>    
         <sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>    
+        <maven.compiler.source>1.7</maven.compiler.source>
+  		<maven.compiler.target>1.7</maven.compiler.target>
         
 		<!-- repositories -->
 		<p2.google-guava>http://guava-osgi.googlecode.com/svn/trunk/repository/</p2.google-guava>
