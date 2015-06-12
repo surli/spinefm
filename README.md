@@ -12,15 +12,30 @@ SpineFM is a tooled approach which aims to describe a software product line with
 ## Requirements 
 
 * Maven version 3
-* Java 1.6 or up
-* Eclipse Modeling Tool (only to create new models)
+* Java 1.7 or up
+* [[Eclipse Modeling Tool|https://eclipse.org/modeling/]] with maven integration
 
 ## How to use it? 
 
 ! Work in progress
 
-1. cd spinefm-p2 && mvn clean install
-2. Download and install eclipse-modeling
-3. Import new maven project in eclipse
+### Setup Eclipse 
+
+1. In a console, go to the spinefm root directory and type the following command: cd spinefm-p2 && mvn clean install
+2. Open eclipse modeling tool in a new workspace project and install maven integration if it's not done yet
+3. Import maven project in eclipse and select directory spinefm (the root of this repository)
 4. Open spinefm-root project and open file target.target inside it
-5. Click on "Set as target" and wait for eclipse to resolve dependencies
+5. Click on "Set as target platform" (link in the top right of target definition view) and wait for eclipse to resolve dependencies
+6. Test the setup by launching spinefm-core tests: all tests must pass (be careful that you must use java 1.7 to launch tests)
+
+### Create your own domain model
+
+
+### Use your domain model
+
+#### Via a Java program
+
+#### Via TOCSIN configuration interface
+
+#### Via the RESTlike API 
+
