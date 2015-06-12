@@ -17,6 +17,7 @@
 <unit id="fr.unice.i3s.sigma.feature.source.feature.group" version="1.0.0.201307191438"/>
 <repository location="http://nyx.unice.fr/p2/sigma/milestones/1.1/"/>
 </location>
-<location path="/Users/urli/yourcast/yourcast-spinefm/maven/spinefm-p2/target/repository" type="Directory"/>
+<location path="${resource_loc:/spinefm-root}/spinefm-p2/target/repository" type="Directory"/>
 </locations>
+<targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 </target>
