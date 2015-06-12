@@ -13,7 +13,7 @@ SpineFM is a tooled approach which aims to describe a software product line with
 
 * Maven version 3
 * Java 1.7 or up
-* [[Eclipse Modeling Tool|https://eclipse.org/modeling/]] with maven integration
+* [Eclipse Modeling Tool](https://eclipse.org/modeling/) with maven integration
 
 ## How to use it? 
 
@@ -30,6 +30,17 @@ SpineFM is a tooled approach which aims to describe a software product line with
 
 ### Create your own domain model
 
+#### Creation of the domain model
+1. Create a new project in eclipse and create a directory "model"
+2. Open the file "MetamodelSpineFM.ecore" contained in directory "model" of project spinefm-core
+3. Open the hierarchy spinefm/MSPLModel, select "MultipleSoftwareProductLine" right click, select "Create dynamic instance" and create the instance inside your new project under directory "model"
+4. Open your newly created model with the Ecore editor view and display property view
+
+#### Definition of concepts
+
+#### Definition of associations
+
+#### Definition of restrictions
 
 ### Use your domain model
 
