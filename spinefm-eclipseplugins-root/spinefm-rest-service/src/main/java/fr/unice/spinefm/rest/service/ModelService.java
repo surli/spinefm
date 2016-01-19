@@ -1,6 +1,7 @@
 package fr.unice.spinefm.rest.service;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,6 +39,7 @@ import fr.unice.spinefm.rest.model.RestAsso;
 import fr.unice.spinefm.rest.model.RestDE;
 import fr.unice.spinefm.rest.model.RestMultiplicityElement;
 import fr.unice.spinefm.rest.service.exception.CoreNotExistingException;
+import fr.unice.spinefm.rest.service.utils.FileTool;
 import fr.unice.spinefm.rest.service.utils.RestMethodUtils;
 
 
@@ -280,18 +282,23 @@ public class ModelService {
 		return RestMethodUtils.createResponse(true);
 	}
 	
-	/*
 	@Path("downloadmodel/")
-	@PUT
+	@GET
 	@Produces("application/zip")
 	public Response downloadModels(@PathParam("coreID") String coreID) {
 		ContextManager cc = RestMethodUtils.getCoreInRESTService(coreID);
-		File path = new File(this.modelDirectoryPath(coreID));
+		String path = this.modelDirectoryPath(coreID);
+		UserGenerate action = UserActionModelFactory.eINSTANCE.createUserGenerate();
+		action.initManualAction(cc);
+		action.setPath(path);
+		File fpath = new File(this.modelDirectoryPath(coreID));
 		File dest = new File(DEFAULT_SAVE_PATH);
 		RestSpineFMInstance rspinefm;
 		try {
+			action.apply();
+			RestMethodUtils.updateModificationDate(coreID);
 			rspinefm = CoreRegistry.getInstance().getRestSpineFMInstance(coreID);
-			File result = this.generateConfigurationZipFile(dest, path, rspinefm.getDescription());
+			File result = this.generateConfigurationZipFile(dest, fpath, rspinefm.getDescription());
 			return Response.ok(result)
 			.header("Access-Control-Allow-Origin","*")
 			.header("Access-Control-Allow-Credentials", "true")
@@ -303,6 +310,10 @@ public class ModelService {
 			return RestMethodUtils.launchAndManageWebException(e, 500);
 		} catch (CoreNotExistingException e) {
 			return RestMethodUtils.launchAndManageWebException(e, 404);
+		} catch (ElementNotFoundException e) {
+			return RestMethodUtils.launchAndManageWebException(e, 404);
+		} catch (FatalSpineFMException e) {
+			return RestMethodUtils.launchAndManageWebException(e, 500);
 		}
 	}
 	
@@ -313,7 +324,7 @@ public class ModelService {
 		
 		FileTool.zip(dirToZip, zip);
 		return zip; 
-	}*/
+	}
 	
 	@Path("generate/")
 	@OPTIONS
