@@ -1,4 +1,0 @@
-source=Renderer
-target=Zone
-rule :
-	SELECTED Elements.$A => SELECT Elements.$A ;

@@ -1,7 +1,0 @@
-renderer1 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: PictureAlbum; Elements: Content Logo Title; Content: Graphic; Graphic: Thumbnails; Design: GLC; Discretization: FixedNumber; FixedNumber: By6; Title: AlbumName; Logo: FromSource;)
-renderer2 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Calendar; Elements: Content Title; Content: Text; Design: GLC; Discretization: ByFive;)
-renderer3 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Forecast; Elements: Content; Content: Graphic Logo; Graphic: Full; Logo: FromSource; Design: IRSAM; Discretization: ByOne;)
-renderer4 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: PictureAlbum; Elements: Content Title; Content: Graphic; Graphic: Full; Design: GLC; Discretization: ByOne;)
-renderer5 = FM(Renderer: TypeInfo Elements Design Discretization; TypeInfo: Forecast; Elements: Content; Content: Graphic; Graphic: Thumbnails; Design: GLC; Discretization: ByOne;)
-
-yourcastv0_renderer = merge sunion renderer*

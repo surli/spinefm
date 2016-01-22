@@ -1,2 +1,0 @@
-rule :
-	SELECTED Elements.$A => SELECT Elements.$A ;

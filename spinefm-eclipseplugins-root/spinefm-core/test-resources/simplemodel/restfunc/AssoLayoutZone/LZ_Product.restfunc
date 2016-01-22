@@ -1,7 +1,0 @@
-source=Layout
-target=Zone
-rule :
-	SELECTED Design.$A => SELECT Design.$A ;
-
-rule :
-	DESELECTED Zones.$A => DESELECT Product.$A ;

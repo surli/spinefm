@@ -1,1 +1,0 @@
-sintef_SENSAPP = FM(SensApp: Collector [Registry] [Transformer];)

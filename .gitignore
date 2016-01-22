@@ -8,3 +8,4 @@
 *.gz
 *.svn*
 target/
+.idea

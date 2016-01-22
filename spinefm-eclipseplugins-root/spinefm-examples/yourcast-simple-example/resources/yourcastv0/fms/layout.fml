@@ -1,5 +1,0 @@
-fm_layout = FM(Layout: Product Design Zones;
-				Product: (LayoutIRSAM|LayoutEPU|LayoutCA);
-				Design: (EPU|IRSAM|N2I|CA|Noel);
-				Zones: BigSquareCenter [ThinBarFooter];
-				)

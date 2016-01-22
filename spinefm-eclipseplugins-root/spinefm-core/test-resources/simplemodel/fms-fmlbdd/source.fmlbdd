@@ -1,8 +1,0 @@
-source1 = FM(Source: TypeInfo Criteria Provider; TypeInfo: PictureAlbum; PictureAlbum: FlickR; Criteria: Filter Limit; Filter: Search; Provider: I3S;)
-source2 = FM(Source: TypeInfo Criteria Provider; TypeInfo: Forecast; Forecast: Weather2; Criteria: Filter; Filter: Date Location; Provider: I3S;)
-source3 = FM(Source: TypeInfo Criteria Provider; TypeInfo: RSSFeed; RSSFeed: RSSFeedReader; Criteria: Filter; Filter: URL Limit; URL: TV5; Provider: I3S;)
-source4 = FM(Source: TypeInfo Criteria Provider; TypeInfo: PictureAlbum; PictureAlbum: TwitterPicture; Criteria: Filter Limit; Filter: User; Provider: I3S;)
-source5 = FM(Source: TypeInfo Criteria Provider; TypeInfo: Calendar; Calendar: ICalReader; Criteria: Filter; Filter: URL Date Duration; Date: Beginning; Beginning: Now; Provider: I3S;)
-source6 = FM(Source: TypeInfo Criteria Provider; TypeInfo: PictureAlbum; PictureAlbum: Picasa; Criteria: Filter Limit Sort; Filter: Album User; Sort: Shuffle; Provider: I3S;)
-	
-yourcastv0_source = merge sunion source*

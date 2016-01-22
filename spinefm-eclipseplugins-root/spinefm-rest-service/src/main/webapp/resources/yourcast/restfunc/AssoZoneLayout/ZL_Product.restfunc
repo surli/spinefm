@@ -1,5 +1,0 @@
-rule :
-	SELECTED Product.$A => SELECT Zones.$A ;
-	
-rule :
-	DESELECTED Product.$A => DESELECT Zones.$A ;

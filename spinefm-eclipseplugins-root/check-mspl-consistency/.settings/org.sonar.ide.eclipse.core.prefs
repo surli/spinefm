@@ -1,6 +1,0 @@
-analyseLocally=false
-eclipse.preferences.version=1
-extraProperties=sonar.exclusions\=**/src-gen/**/*.java\r\nsonar.java.coveragePlugin\=cobertura\r\nsonar.forceAnalysis\=true\r\nsonar.dynamicAnalysis\=true
-projectKey=fr.unice.spinefm\:check-mspl-consistency
-serverUrl=http\://nyx.unice.fr\:9000
-version=2
