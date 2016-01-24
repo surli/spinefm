@@ -233,43 +233,33 @@ public class TestFMLSpineFMAdapter {
 		fmExpected.setName("a");
 
 		Feature root = new Feature();
-		root.setName("a.Source");
 		root.setName("Source");
 
 		Feature typeinfo = new Feature();
-		typeinfo.setName("a.TypeInfo");
 		typeinfo.setName("TypeInfo");
 
 		Feature product = new Feature();
-		product.setName("a.Product");
 		product.setName("Product");
 
 		Feature criteria = new Feature();
-		criteria.setName("a.Criteria");
 		criteria.setName("Criteria");
 
 		Feature picturealbum = new Feature();
-		picturealbum.setName("a.PictureAlbum");
 		picturealbum.setName("PictureAlbum");
 
 		Feature flickr = new Feature();
-		flickr.setName("a.FlickR");
 		flickr.setName("FlickR");
 
 		Feature picasa = new Feature();
-		picasa.setName("a.Picasa");
 		picasa.setName("Picasa");
 
 		Feature sort = new Feature();
-		sort.setName("a.Sort");
 		sort.setName("Sort");
 
 		Feature date = new Feature();
-		date.setName("a.Date");
 		date.setName("Date");
 
 		Feature name = new Feature();
-		name.setName("a.Name");
 		name.setName("Name");
 
 		Group g = new Group();

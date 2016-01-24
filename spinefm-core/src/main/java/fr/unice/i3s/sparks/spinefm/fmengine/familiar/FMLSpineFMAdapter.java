@@ -9,6 +9,7 @@ import fr.unice.i3s.sparks.spinefm.featuremodeling.*;
 import fr.unice.i3s.sparks.spinefm.fmengine.FMSpineFMAdapter;
 import fr.unice.i3s.sparks.spinefm.fmengine.SpecificInterpreter;
 import fr.unice.i3s.sparks.spinefm.fmengine.exceptions.FMEngineException;
+import gsd.synthesis.Expression;
 import gsd.synthesis.FeatureNode;
 import org.apache.log4j.Logger;
 import org.xtext.example.mydsl.fML.FeatureEdgeKind;
@@ -74,6 +75,13 @@ public class FMLSpineFMAdapter implements FMSpineFMAdapter {
 			//fm.addFeature(froot.getName(), froot, GroupState.MANDATORY);
 			
 			this.createFeaturesFromFamiliarRoot(fm, fmv, fmvroot, froot);
+			Set<Expression<String>> constraints = fmv.getAllConstraints();
+
+			for (Expression<String> expr : constraints) {
+				Constraint c = new Constraint();
+				c.setRule(expr.toString());
+				fm.addConstraint(c);
+			}
 		} catch (VariableNotExistingException e) {
 			throw new FMEngineException("VariableNotExistingException in FM  "+fm+" (var : "+var+") : "+e.getMessage());
 		} catch (VariableAmbigousConflictException e) {

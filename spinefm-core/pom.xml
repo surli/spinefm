@@ -70,6 +70,11 @@
       <artifactId>org.eclipse.xtext.common.types</artifactId>
       <version>2.9.1</version>
     </dependency>
+    <dependency>
+      <groupId>org.sat4j</groupId>
+      <artifactId>org.sat4j.core</artifactId>
+      <version>2.0.0</version>
+    </dependency>
 
   </dependencies>
 </project>

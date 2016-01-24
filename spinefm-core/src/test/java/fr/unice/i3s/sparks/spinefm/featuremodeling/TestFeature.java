@@ -22,7 +22,7 @@ public class TestFeature {
         Feature f1 = new Feature("test");
         Feature f2 = new Feature("Test");
 
-        assertNotEquals("Feature with different names are considered as equals: ", f2, f2);
+        assertNotEquals("Feature with different names are considered as equals: ", f1, f2);
     }
 
 

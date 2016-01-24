@@ -84,15 +84,17 @@ public class FeatureModel {
 
         FeatureModel that = (FeatureModel) o;
 
-        if (!name.equals(that.name)) return false;
-        return root.equals(that.root);
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (root != null ? !root.equals(that.root) : that.root != null) return false;
+        return constraints != null ? constraints.equals(that.constraints) : that.constraints == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + root.hashCode();
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (root != null ? root.hashCode() : 0);
+        result = 31 * result + (constraints != null ? constraints.hashCode() : 0);
         return result;
     }
 }
