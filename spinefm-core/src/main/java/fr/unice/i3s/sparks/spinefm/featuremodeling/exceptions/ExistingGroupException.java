@@ -1,4 +1,4 @@
-package fr.unice.i3s.sparks.featuremodeling.exceptions;
+package fr.unice.i3s.sparks.spinefm.featuremodeling.exceptions;
 
 /**
  * Created by urli on 22/01/2016.

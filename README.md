@@ -66,7 +66,7 @@ In the next steps we are trying to create the following domain model :
 * [0..*]
 
 Lower and upper bound properties of the multiplicity elements are used to define the range. 
-Please note that the `*` is considered with the value `-1`. 
+Please note that the `*` is considered with the rule `-1`.
 ![Create new concept](https://raw.githubusercontent.com/surli/spinefm/master/documentation/images/9-define-concept-multiplicity.png)
 
 

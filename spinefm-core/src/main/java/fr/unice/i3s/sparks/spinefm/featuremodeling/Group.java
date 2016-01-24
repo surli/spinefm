@@ -1,4 +1,4 @@
-package fr.unice.i3s.sparks.featuremodeling;
+package fr.unice.i3s.sparks.spinefm.featuremodeling;
 
 import java.util.HashSet;
 import java.util.Set;

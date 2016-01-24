@@ -1,6 +1,6 @@
-package fr.unice.i3s.sparks.featuremodeling;
+package fr.unice.i3s.sparks.spinefm.featuremodeling;
 
-import fr.unice.i3s.sparks.featuremodeling.exceptions.ExistingGroupException;
+import fr.unice.i3s.sparks.spinefm.featuremodeling.exceptions.ExistingGroupException;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +13,10 @@ public class Feature {
 
     private Set<Group> children;
 
+    public Feature() {
+        this("");
+    }
+
     public Feature(String name) {
         this.name = name;
         this.children = new HashSet<Group>();
@@ -20,6 +24,10 @@ public class Feature {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<Group> getChildren() {
