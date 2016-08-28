@@ -1,5 +1,9 @@
 package fr.unice.i3s.sparks.spinefm.domainmodeling;
 
+import fr.unice.i3s.sparks.spinefm.domainmodeling.exceptions.ObjectNotFoundException;
+
+import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -9,10 +13,12 @@ public class DomainModel {
 
     private String name;
 
-    private Set<Concept> concepts;
+    private Map<String, Concept> concepts;
     private Set<Association> associations;
 
-    public DomainModel() {}
+    public DomainModel(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
@@ -22,8 +28,16 @@ public class DomainModel {
         this.name = name;
     }
 
-    public Set<Concept> getConcepts() {
-        return concepts;
+    public Collection<Concept> getConcepts() {
+        return concepts.values();
+    }
+
+    public Concept getConceptByName(String name) throws ObjectNotFoundException {
+        if (this.concepts.containsKey(name)) {
+            return this.concepts.get(name);
+        } else {
+            throw new ObjectNotFoundException();
+        }
     }
 
     public Set<Association> getAssociations() {
@@ -31,7 +45,7 @@ public class DomainModel {
     }
 
     public void addConcept(Concept c) {
-        this.concepts.add(c);
+        this.concepts.put(c.getName(), c);
     }
 
     public void addAssociation(Association a) {

@@ -1,0 +1,99 @@
+{
+  "name": "SmartBuilding",
+  "concepts": [
+    {
+      "name": "Building",
+      "multiplicity": {
+        "lowerBound": 1,
+        "upperBound": 1
+      }
+    },
+    {
+      "name": "Apartment",
+      "multiplicity": {
+        "lowerBound": 1,
+        "upperBound": -1
+      }
+    },
+    {
+      "name": "Room",
+      "multiplicity": {
+        "lowerBound": 1,
+        "upperBound": -1
+      }
+    },
+    {
+      "name": "Opening",
+      "multiplicity": {
+        "lowerBound": 1,
+        "upperBound": -1
+      }
+    }
+  ],
+  "associations": [
+    {
+      "leftEnd": {
+        "concept": "Building",
+        "multiplicity": {
+          "lowerBound": 1,
+          "upperBound": 1
+        }
+      },
+      "rightEnd": {
+        "concept": "Apartment",
+        "multiplicity": {
+          "lowerBound": 1,
+          "upperBound": -1
+        }
+      }
+    },
+    {
+      "leftEnd": {
+        "concept": "Apartment",
+        "multiplicity": {
+          "lowerBound": 1,
+          "upperBound": 1
+        }
+      },
+      "rightEnd": {
+        "concept": "Room",
+        "multiplicity": {
+          "lowerBound": 1,
+          "upperBound": -1
+        }
+      }
+    },
+    {
+      "leftEnd": {
+        "concept": "Room",
+        "multiplicity": {
+          "lowerBound": 1,
+          "upperBound": -1
+        }
+      },
+      "rightEnd": {
+        "concept": "Opening",
+        "multiplicity": {
+          "lowerBound": 1,
+          "upperBound": -1
+        }
+      }
+    },
+    {
+      "leftEnd": {
+        "concept": "Apartment",
+        "multiplicity": {
+          "lowerBound": 0,
+          "upperBound": 1
+        }
+      },
+      "rightEnd": {
+        "concept": "Opening",
+        "multiplicity": {
+          "lowerBound": 1,
+          "upperBound": -1
+        }
+      }
+    }
+  ]
+}
