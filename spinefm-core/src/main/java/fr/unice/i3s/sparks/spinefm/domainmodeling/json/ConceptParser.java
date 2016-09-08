@@ -12,10 +12,23 @@ import javax.json.JsonObject;
  */
 public class ConceptParser {
     public static Concept parseJson(JsonObject jsonConcept) throws JsonParsingException {
-        String name = jsonConcept.getString("name");
+        String name;
+        JsonObject multiplicityJson;
+
+        try {
+            name = jsonConcept.getString("name");
+        } catch (NullPointerException exception) {
+            throw new JsonParsingException("The name attribute is missing from concept.");
+        }
+
+        try {
+            multiplicityJson = jsonConcept.getJsonObject("multiplicity");
+        } catch (NullPointerException exception) {
+            throw new JsonParsingException("The multiplicity attribute is missing from concept.");
+        }
+
         Concept concept = new Concept(name);
 
-        JsonObject multiplicityJson = jsonConcept.getJsonObject("multiplicity");
         Multiplicity multiplicity = MultiplicityParser.parseJson(multiplicityJson);
         concept.setMultiplicity(multiplicity);
 
