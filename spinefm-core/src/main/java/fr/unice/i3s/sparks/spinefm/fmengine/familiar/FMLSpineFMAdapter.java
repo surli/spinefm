@@ -14,6 +14,7 @@ import gsd.synthesis.FeatureNode;
 import org.apache.log4j.Logger;
 import org.xtext.example.mydsl.fML.FeatureEdgeKind;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -35,8 +36,16 @@ public class FMLSpineFMAdapter implements FMSpineFMAdapter {
 		this.sfi = sfi;
 	}
 	
-	public void populateFeatureModel(FeatureModel fm) throws FMEngineException {
-		this.populateFeatureModel(fm,fm.getName());
+	public FeatureModel parseFeatureModel(String fmName, String fmPath) throws FMEngineException {
+		try {
+			this.sfi.evalFile(fmPath);
+		} catch (IOException ioexception) {
+			throw new FMEngineException("Error while reading the FM file : "+ioexception.getMessage());
+		}
+		FeatureModel fm = new FeatureModel(fmName);
+		this.populateFeatureModel(fm);
+
+		return fm;
 	}
 	
 	private Map<Feature,Group> sourceGroup;
@@ -44,12 +53,13 @@ public class FMLSpineFMAdapter implements FMSpineFMAdapter {
 	private Map<String,Feature> features;
 	
 	
-	private void populateFeatureModel(FeatureModel fm, String var) throws FMEngineException {
+	public void populateFeatureModel(FeatureModel fm) throws FMEngineException {
+		String var = fm.getName();
+		this.sourceGroup = new HashMap<Feature,Group>();
+		this.features = new HashMap<String,Feature>();
+		this.addedGroup = new HashMap<Group,Boolean>();
+
 		try {
-			this.sourceGroup = new HashMap<Feature,Group>();
-			this.features = new HashMap<String,Feature>();
-			this.addedGroup = new HashMap<Group,Boolean>();
-			
 			FeatureModelVariable fmv =  this.sfi.getFMVariable(var);
 			
 			Set<FGroup> groups = fmv.getGroups();

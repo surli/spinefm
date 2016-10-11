@@ -6,6 +6,10 @@
       "multiplicity": {
         "lowerBound": 1,
         "upperBound": 1
+      },
+      "fm": {
+        "path": "./fm/building.fml",
+        "name": "building"
       }
     },
     {
@@ -13,6 +17,10 @@
       "multiplicity": {
         "lowerBound": 1,
         "upperBound": -1
+      },
+      "fm": {
+        "path": "./fm/apartment.fml",
+        "name": "apartment"
       }
     },
     {
@@ -20,6 +28,10 @@
       "multiplicity": {
         "lowerBound": 1,
         "upperBound": -1
+      },
+      "fm": {
+        "path": "./fm/room.fml",
+        "name": "room"
       }
     },
     {
@@ -27,6 +39,10 @@
       "multiplicity": {
         "lowerBound": 1,
         "upperBound": -1
+      },
+      "fm": {
+        "path": "./fm/opening.fml",
+        "name": "opening"
       }
     }
   ],

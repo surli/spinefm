@@ -15,13 +15,9 @@ import java.util.Set;
  *
  */
 public interface FMSpineFMAdapter {
-	
-	/**
-	 * Populate a feature model from the datas retrieve from the FMEngine. The feature model ID is used to get proper datas.
-	 * If the feature model already contains informations, there will be erased. 
-	 * @param fm The feature model to populate.
-	 * @throws FMEngineException 
-	 */
+
+	public FeatureModel parseFeatureModel(String fmName, String fmPath) throws FMEngineException;
+
 	public void populateFeatureModel(FeatureModel fm) throws FMEngineException;
 	
 	/**

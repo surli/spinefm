@@ -1,6 +1,8 @@
 package fr.unice.i3s.sparks.spinefm.domainmodeling;
 
 import fr.unice.i3s.sparks.spinefm.featuremodeling.FeatureModel;
+import fr.unice.i3s.sparks.spinefm.fmengine.exceptions.FMEngineException;
+import fr.unice.i3s.sparks.spinefm.fmengine.familiar.FMLSpineFMAdapter;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -37,6 +39,10 @@ public class Concept {
 
     public void setFeatureModel(FeatureModel featureModel) {
         this.featureModel = featureModel;
+    }
+
+    public void parseFeatureModel(String fmName, String fmPath, FMLSpineFMAdapter fmlAdapter) throws FMEngineException {
+        this.featureModel = fmlAdapter.parseFeatureModel(fmName, fmPath);
     }
 
     public Multiplicity getMultiplicity() {
