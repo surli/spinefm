@@ -18,7 +18,7 @@
     <repository>
       <id>i3s-public</id>
       <name>I3S Maven Releases Repository</name>
-      <url>http://nyx.unice.fr:9007/nexus/content/repositories/i3s-public</url>
+      <url>http://nexus.i3s.unice.fr/content/repositories/i3s-public</url>
     </repository>
   </repositories>
 
