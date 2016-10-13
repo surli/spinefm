@@ -2,9 +2,7 @@ package fr.unice.i3s.sparks.spinefm.domainmodeling;
 
 import fr.unice.i3s.sparks.spinefm.domainmodeling.exceptions.ObjectNotFoundException;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by urli on 25/01/2016.
@@ -18,6 +16,8 @@ public class DomainModel {
 
     public DomainModel(String name) {
         this.name = name;
+        this.concepts = new HashMap<String, Concept>();
+        this.associations = new HashSet<Association>();
     }
 
     public String getName() {

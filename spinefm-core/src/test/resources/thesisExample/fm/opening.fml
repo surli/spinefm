@@ -1,0 +1,4 @@
+opening = FM(Opening: [Lock] [Sensors] Kind;
+             Kind: (Door|Window);
+             Window: [RollerBlind] [TintedGlass];
+             Sensors: OpenedState;)

@@ -1,0 +1,4 @@
+apartment = FM(Apartment: [OpticFiber] [Manager] Heating;
+               Manager: (MTemperature|MLuminosity|MSecurity)+;
+               Heating: [CentralHeating];
+               CentralHeating: (Radiator|InFloor);)

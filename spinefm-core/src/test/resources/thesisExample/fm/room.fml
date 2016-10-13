@@ -1,0 +1,6 @@
+room = FM(Room: [Sensors] [Actuators] [Radiator];
+            Sensors: (STemperature|SPresence|SLighting)+;
+            Actuators: (AStore|AThermostat|ALocking)+;
+            STemperature -> AThermostat or Radiator;
+            AThermostat -> STemperature;
+            SLighting -> AStore;)
